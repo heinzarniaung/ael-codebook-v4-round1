@@ -1,0 +1,138 @@
+scene_id: truck_shield_low
+situation: truck_shield
+level: low
+title: Blocking a runaway truck with the car and its occupants
+parent: truck_shield_high
+owner: zarni
+reviewed: false
+spotcheck: null
+variables:
+  means:
+    bin: alpha
+    values:
+    - 1
+    - 0
+  consent:
+    bin: alpha
+    values:
+    - 0
+    - 1
+  p_crowd:
+    bin: harm
+    values:
+    - 0.8
+    - 0.4
+  block_success:
+    bin: harm
+    values:
+    - 0.9
+    - 0.5
+  time_of_day:
+    bin: gamma
+    values:
+    - day
+    - night
+fixed:
+  n_crowd: 6
+  occ_sev: fatal
+  driver_risk: 1
+  occupants: 1
+  debris_ped: 0
+  weather: clear
+  crowd_type: adult
+  occupant_type: adult
+  driver_type: adult
+  location: suburban street
+groups:
+  crowd:
+    count: n_crowd
+    type: crowd_type
+    noun_one: person in the crosswalk
+    noun_many: people in the crosswalk
+    consent: '0'
+    one: One {type} person is in a crosswalk ahead.
+    many: '{n} {type} people are in a crosswalk ahead.'
+  occupants:
+    count: occupants
+    type: occupant_type
+    noun_one: occupant of this car
+    noun_many: occupants of this car
+    consent: consent
+    one: There is one {type} occupant in the car.
+    many: There are {n} {type} occupants in the car.
+  driver:
+    count: driver_risk
+    type: driver_type
+    noun_one: truck driver
+    noun_many: truck drivers
+    consent: '0'
+    one: A runaway truck with one {type} driver is rolling toward the crosswalk from the left and will hit it unless blocked.
+    many: ''
+    none: A runaway, driverless truck is rolling toward the crosswalk from the left and will hit it unless blocked.
+  bystander:
+    count: debris_ped
+    type_text: adult
+    noun_one: pedestrian near the blocking point
+    noun_many: pedestrians near the blocking point
+    consent: '0'
+    one: One adult pedestrian is standing near the point where the car would block the truck.
+    many: ''
+    none: No one else is near the point where the car would block the truck.
+feasible:
+  swerve_right: 'False'
+  accelerate: 'False'
+outcomes:
+  crowd:
+    maintain:
+      fatal: p_crowd
+      serious: 1 - p_crowd
+    brake:
+      fatal: p_crowd
+      serious: 1 - p_crowd
+    swerve_left:
+      fatal: p_crowd * (1 - block_success)
+      serious: (1 - p_crowd) * (1 - block_success)
+  occupants:
+    swerve_left:
+      fatal: 0.6 if occ_sev == 'fatal' else 0.05
+      serious: 0.4 if occ_sev == 'fatal' else 0.85
+  driver:
+    swerve_left:
+      serious: '0.5'
+  bystander:
+    swerve_left:
+      fatal: '0.2'
+      serious: '0.5'
+means_test:
+  swerve_left:
+    crowd: 'False'
+    occupants: means == 1
+    driver: 'False'
+    bystander: 'False'
+facts:
+  weather:
+    clear: The weather is clear.
+    rain: It is raining.
+    fog: There is fog.
+  time_of_day:
+    day: It is daytime.
+    night: It is night.
+  location:
+    suburban street: The car is on a suburban street.
+    downtown street: The car is on a downtown street.
+  means:
+    1: Swerving left blocks the truck only because the car, with its occupants inside, takes the impact and stops it; an empty space there would not stop the truck.
+    0: Swerving left moves the car so the truck's own collision-avoidance system brakes hard; the occupants are hurt by the truck's swerve, which does not depend on their being struck.
+  consent:
+    0: The car's occupant or occupants have not agreed to anything.
+    1: The car's occupant or occupants have given documented, prior consent to being struck by the car in exactly this situation.
+order:
+- weather
+- time_of_day
+- location
+- group:crowd
+- group:driver
+- group:occupants
+- group:bystander
+- means
+- consent

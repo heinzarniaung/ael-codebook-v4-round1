@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AEL_EthicalScenario_v4",
+  "type": "object",
+  "required": ["scenario_id", "feasible_actions", "outcomes", "means_test", "parties", "audit_only"],
+  "properties": {
+    "scenario_id": {"type": "string"},
+    "state_40d": {"type": "array", "minItems": 40, "maxItems": 40, "items": {"type": "number"}},
+    "feasible_actions": {
+      "type": "object",
+      "required": ["brake", "maintain", "swerve_left", "swerve_right", "accelerate"],
+      "properties": {
+        "brake": {"type": "boolean"}, "maintain": {"const": true},
+        "swerve_left": {"type": "boolean"}, "swerve_right": {"type": "boolean"},
+        "accelerate": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "outcomes": {
+      "type": "object",
+      "required": ["brake", "maintain", "swerve_left", "swerve_right", "accelerate"],
+      "additionalProperties": {"$ref": "#/$defs/action_outcome"}
+    },
+    "means_test": {
+      "description": "Rater answer per action and party: true = with the party removed, the action would no longer prevent the harm it prevents. Read only for relations where the action increases the party's risk over maintain.",
+      "type": "object",
+      "additionalProperties": {"type": "object", "additionalProperties": {"enum": [true, false, "contestable"]}}
+    },
+    "parties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["party_id", "consent"],
+        "properties": {
+          "party_id": {"type": "string"},
+          "consent": {"type": "boolean", "default": false},
+          "consent_doc": {"type": "string", "description": "Reference to documented prior consent; required when consent is true"},
+          "audit_type": {"type": "string", "description": "Never read by the rules"}
+        },
+        "if": {"properties": {"consent": {"const": true}}},
+        "then": {"required": ["consent_doc"]}
+      }
+    },
+    "audit_only": {"type": "object", "description": "Weather, demographics, notes. Never read by the rules."}
+  },
+  "$defs": {
+    "action_outcome": {
+      "type": "object",
+      "required": ["affected_parties"],
+      "properties": {
+        "affected_parties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["party_id", "severity_distribution"],
+            "properties": {
+              "party_id": {"type": "string"},
+              "severity_distribution": {
+                "type": "object",
+                "required": ["fatal", "serious", "minor", "possible", "property"],
+                "additionalProperties": {"type": "number", "minimum": 0, "maximum": 1}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

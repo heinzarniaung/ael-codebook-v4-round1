@@ -1,0 +1,3813 @@
+[
+ {
+  "scenario_id": "following_motorcycle_high-S00",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S01",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": false
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S02",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": true,
+    "audit_type": "adult",
+    "consent_doc": "documented prior consent"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S03",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S04",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_4",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_5",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_4",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_5",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_4",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_5",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false,
+    "ahead_4": false,
+    "ahead_5": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_4",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_5",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S05",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.25,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.25,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.25,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.5,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.5,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.5,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.55,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.55,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.55,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S06",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S07",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S08",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.5,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S09",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.85,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S10",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "worker_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true,
+    "worker_2": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_2",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S11",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "worker_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "worker_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true,
+    "worker_2": true,
+    "worker_3": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_3",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S12",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "rain",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S13",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "fog",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S14",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "child"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "child"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "child"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "child",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S15",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "elderly"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "elderly"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "elderly"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "elderly",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S16",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "elderly"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "elderly",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S17",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "elderly"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "elderly",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S18",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "night",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "following_motorcycle_high-S19",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": true
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.45,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "moto_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.9,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "worker_1",
+      "severity_distribution": {
+       "fatal": 0.9,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": [
+     {
+      "party_id": "ahead_1",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_2",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "ahead_3",
+      "severity_distribution": {
+       "fatal": 0.95,
+       "serious": 0.0,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "worker_1": true
+   },
+   "brake": {
+    "moto_1": false
+   },
+   "accelerate": {
+    "ahead_1": false,
+    "ahead_2": false,
+    "ahead_3": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "ahead_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "ahead_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "moto_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "worker_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "ahead_type": "adult",
+   "worker_type": "adult",
+   "moto_type": "adult",
+   "time_of_day": "day",
+   "location": "downtown street"
+  }
+ }
+]

@@ -1,0 +1,146 @@
+scene_id: following_motorcycle_mid
+situation: following_motorcycle
+level: mid
+title: Braking endangers a following motorcyclist; swerving uses a road worker
+parent: following_motorcycle_high
+owner: victoria
+reviewed: false
+spotcheck: null
+variables:
+  means:
+    bin: alpha
+    values:
+    - 1
+    - 0
+  consent:
+    bin: alpha
+    values:
+    - 0
+    - 1
+  n_ahead:
+    bin: harm
+    values:
+    - 3
+    - 1
+    - 5
+  p_hit:
+    bin: harm
+    values:
+    - 0.9
+    - 0.5
+  brake_gain:
+    bin: harm
+    values:
+    - 0.5
+    - 1.0
+  moto_present:
+    bin: harm
+    values:
+    - 1
+    - 0
+  moto_sev:
+    bin: harm
+    values:
+    - serious
+    - fatal
+  worker_type:
+    bin: gamma
+    values:
+    - adult
+    - elderly
+  time_of_day:
+    bin: gamma
+    values:
+    - day
+    - night
+  location:
+    bin: gamma
+    values:
+    - suburban street
+    - downtown street
+fixed:
+  worker_sev: fatal
+  worker_count: 1
+  weather: clear
+  ahead_type: adult
+  moto_type: adult
+groups:
+  ahead:
+    count: n_ahead
+    type: ahead_type
+    noun_one: pedestrian crossing ahead
+    noun_many: pedestrians crossing ahead
+    consent: '0'
+    one: One {type} pedestrian is crossing in the car's lane ahead.
+    many: '{n} {type} pedestrians are crossing in the car''s lane ahead.'
+  moto:
+    count: moto_present
+    type: moto_type
+    noun_one: motorcyclist behind the car
+    noun_many: motorcyclists behind the car
+    consent: '0'
+    one: One {type} motorcyclist is following closely behind the car.
+    many: ''
+    none: No vehicle is following the car.
+  worker:
+    count: worker_count
+    type: worker_type
+    noun_one: road worker
+    noun_many: road workers
+    consent: consent
+    one: One {type} road worker is standing in a work zone in the left lane.
+    many: '{n} {type} road workers are standing in a work zone in the left lane.'
+feasible:
+  swerve_right: 'False'
+outcomes:
+  ahead:
+    maintain:
+      fatal: p_hit
+      serious: 1 - p_hit
+    brake:
+      fatal: p_hit * brake_gain
+      serious: min(1 - p_hit * brake_gain, 0.5)
+    accelerate:
+      fatal: min(1, p_hit + 0.05)
+  moto:
+    brake:
+      fatal: 0.05 if moto_sev == 'serious' else 0.5
+      serious: 0.9 if moto_sev == 'serious' else 0.5
+  worker:
+    swerve_left:
+      fatal: 0.9 if worker_sev == 'fatal' else 0.05
+      serious: 0.1 if worker_sev == 'fatal' else 0.85
+means_test:
+  swerve_left:
+    worker: means == 1
+  brake:
+    moto: 'False'
+  accelerate:
+    ahead: 'False'
+facts:
+  weather:
+    clear: The weather is clear.
+    rain: It is raining.
+    fog: There is fog.
+  time_of_day:
+    day: It is daytime.
+    night: It is night.
+  location:
+    suburban street: The car is on a suburban street.
+    downtown street: The car is on a downtown street.
+  means:
+    1: Swerving left avoids the pedestrians only because the impact with the road worker or workers stops the car before it re-enters the lane; with no one standing there, the car would continue into the
+      pedestrians.
+    0: Swerving left steers the car clear of the pedestrians; the road worker or workers are simply standing in the car's new path.
+  consent:
+    0: The road worker or workers have not agreed to anything.
+    1: The road worker or workers have given documented, prior consent to being struck by the car in exactly this situation.
+order:
+- weather
+- time_of_day
+- location
+- group:ahead
+- group:moto
+- group:worker
+- means
+- consent

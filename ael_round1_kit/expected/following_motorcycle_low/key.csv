@@ -1,0 +1,7 @@
+case,scenario_id,changed_variable
+96Z,following_motorcycle_low-S00,none
+AMP,following_motorcycle_low-S01,means: 1 -> 0
+C8N,following_motorcycle_low-S02,consent: 0 -> 1
+VKH,following_motorcycle_low-S03,p_hit: 0.9 -> 0.5
+6TX,following_motorcycle_low-S04,brake_gain: 0.5 -> 1.0
+PQ2,following_motorcycle_low-S05,time_of_day: day -> night

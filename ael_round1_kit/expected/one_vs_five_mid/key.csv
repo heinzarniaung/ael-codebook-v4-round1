@@ -1,0 +1,13 @@
+case,scenario_id,changed_variable
+29A,one_vs_five_mid-S00,none
+U6J,one_vs_five_mid-S01,means: 1 -> 0
+UXA,one_vs_five_mid-S02,consent: 0 -> 1
+Y3E,one_vs_five_mid-S03,n_ahead: 5 -> 1
+6JF,one_vs_five_mid-S04,n_ahead: 5 -> 3
+M7H,one_vs_five_mid-S05,p_hit: 0.95 -> 0.5
+WUT,one_vs_five_mid-S06,brake_gain: 1.0 -> 0.5
+K6Y,one_vs_five_mid-S07,left_sev: fatal -> serious
+GU7,one_vs_five_mid-S08,left_count: 1 -> 2
+6PN,one_vs_five_mid-S09,left_type: adult -> child
+UN9,one_vs_five_mid-S10,time_of_day: day -> night
+NJJ,one_vs_five_mid-S11,location: suburban street -> downtown street

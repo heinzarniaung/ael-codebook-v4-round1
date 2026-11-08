@@ -1,5 +1,5 @@
 scene_id,scenario_id,case,changed_variable,R1,R2,R3,R4,R5,R6,R7,R8,note
-one_vs_five_high,one_vs_five_high-S00,QUQ,none,,,,,,,,,
+one_vs_five_high,one_vs_five_high-S00,QUQ,none,Y,Y,Y,NA,Y,Y,N,Y,no sentence explaining brake=maintain
 one_vs_five_high,one_vs_five_high-S01,4JQ,means: 1 -> 0,,,,,,,,,
 one_vs_five_high,one_vs_five_high-S02,3S2,consent: 0 -> 1,,,,,,,,,
 one_vs_five_high,one_vs_five_high-S03,NUE,n_ahead: 5 -> 1,,,,,,,,,

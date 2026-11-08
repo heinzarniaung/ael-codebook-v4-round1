@@ -1,0 +1,7 @@
+case,scenario_id,changed_variable
+AN4,cyclist_bike_lane_low-S00,none
+VTD,cyclist_bike_lane_low-S01,means: 1 -> 0
+M3R,cyclist_bike_lane_low-S02,consent: 0 -> 1
+CVE,cyclist_bike_lane_low-S03,p_hit: 0.9 -> 0.5
+KC7,cyclist_bike_lane_low-S04,brake_gain: 1.0 -> 0.6
+96T,cyclist_bike_lane_low-S05,time_of_day: day -> night

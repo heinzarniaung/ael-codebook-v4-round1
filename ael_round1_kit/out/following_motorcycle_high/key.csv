@@ -1,0 +1,21 @@
+case,scenario_id,changed_variable
+W3P,following_motorcycle_high-S00,none
+GVD,following_motorcycle_high-S01,means: 1 -> 0
+VZP,following_motorcycle_high-S02,consent: 0 -> 1
+DSC,following_motorcycle_high-S03,n_ahead: 3 -> 1
+FS7,following_motorcycle_high-S04,n_ahead: 3 -> 5
+FQU,following_motorcycle_high-S05,p_hit: 0.9 -> 0.5
+7Z3,following_motorcycle_high-S06,brake_gain: 0.5 -> 1.0
+M4Y,following_motorcycle_high-S07,moto_present: 1 -> 0
+W7H,following_motorcycle_high-S08,moto_sev: serious -> fatal
+XYD,following_motorcycle_high-S09,worker_sev: fatal -> serious
+SAS,following_motorcycle_high-S10,worker_count: 1 -> 2
+FE6,following_motorcycle_high-S11,worker_count: 1 -> 3
+MYQ,following_motorcycle_high-S12,weather: clear -> rain
+PZG,following_motorcycle_high-S13,weather: clear -> fog
+CJJ,following_motorcycle_high-S14,ahead_type: adult -> child
+7S8,following_motorcycle_high-S15,ahead_type: adult -> elderly
+JCJ,following_motorcycle_high-S16,worker_type: adult -> elderly
+WGM,following_motorcycle_high-S17,moto_type: adult -> elderly
+2HM,following_motorcycle_high-S18,time_of_day: day -> night
+RRP,following_motorcycle_high-S19,location: suburban street -> downtown street

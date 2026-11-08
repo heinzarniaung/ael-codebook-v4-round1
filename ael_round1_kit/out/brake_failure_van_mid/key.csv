@@ -1,0 +1,13 @@
+case,scenario_id,changed_variable
+YQN,brake_failure_van_mid-S00,none
+UY9,brake_failure_van_mid-S01,means: 1 -> 0
+NVN,brake_failure_van_mid-S02,consent: 0 -> 1
+PGU,brake_failure_van_mid-S03,n_cross: 3 -> 1
+QHQ,brake_failure_van_mid-S04,n_cross: 3 -> 5
+9UN,brake_failure_van_mid-S05,p_hit: 0.8 -> 0.5
+K7M,brake_failure_van_mid-S06,brake_works: 0 -> 1
+FFK,brake_failure_van_mid-S07,van_sev: serious -> fatal
+NEH,brake_failure_van_mid-S08,van_occ: 1 -> 2
+AEG,brake_failure_van_mid-S09,van_type: adult -> elderly
+Z53,brake_failure_van_mid-S10,time_of_day: day -> night
+8XJ,brake_failure_van_mid-S11,location: suburban street -> downtown street

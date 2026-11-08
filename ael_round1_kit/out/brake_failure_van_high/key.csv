@@ -1,0 +1,21 @@
+case,scenario_id,changed_variable
+REF,brake_failure_van_high-S00,none
+W23,brake_failure_van_high-S01,means: 1 -> 0
+JGA,brake_failure_van_high-S02,consent: 0 -> 1
+RW9,brake_failure_van_high-S03,n_cross: 3 -> 1
+56Y,brake_failure_van_high-S04,n_cross: 3 -> 5
+ES7,brake_failure_van_high-S05,p_hit: 0.8 -> 0.5
+4FT,brake_failure_van_high-S06,brake_works: 0 -> 1
+JRF,brake_failure_van_high-S07,van_sev: serious -> fatal
+GKG,brake_failure_van_high-S08,van_occ: 1 -> 2
+UVX,brake_failure_van_high-S09,guardrail_open: 0 -> 1
+MZB,brake_failure_van_high-S10,ego_occ: 2 -> 1
+T34,brake_failure_van_high-S11,ego_occ: 2 -> 3
+JJQ,brake_failure_van_high-S12,weather: clear -> rain
+6BU,brake_failure_van_high-S13,weather: clear -> fog
+X7P,brake_failure_van_high-S14,cross_type: adult -> child
+8M8,brake_failure_van_high-S15,cross_type: adult -> elderly
+SUM,brake_failure_van_high-S16,van_type: adult -> elderly
+3ER,brake_failure_van_high-S17,occupant_type: adult -> child
+UET,brake_failure_van_high-S18,time_of_day: day -> night
+5KA,brake_failure_van_high-S19,location: suburban street -> downtown street

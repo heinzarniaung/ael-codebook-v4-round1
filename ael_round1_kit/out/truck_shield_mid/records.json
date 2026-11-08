@@ -1,0 +1,3251 @@
+[
+ {
+  "scenario_id": "truck_shield_mid-S00",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": false
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "occupants_1",
+      "severity_distribution": {
+       "fatal": 0.6,
+       "serious": 0.4,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "driver_1",
+      "severity_distribution": {
+       "fatal": 0.0,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": []
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "crowd_1": false,
+    "crowd_2": false,
+    "crowd_3": false,
+    "crowd_4": false,
+    "crowd_5": false,
+    "crowd_6": false,
+    "occupants_1": true,
+    "driver_1": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "crowd_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_4",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_5",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_6",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "occupants_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "driver_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "occupant_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "truck_shield_mid-S01",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": false
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "occupants_1",
+      "severity_distribution": {
+       "fatal": 0.6,
+       "serious": 0.4,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "driver_1",
+      "severity_distribution": {
+       "fatal": 0.0,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": []
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "crowd_1": false,
+    "crowd_2": false,
+    "crowd_3": false,
+    "crowd_4": false,
+    "crowd_5": false,
+    "crowd_6": false,
+    "occupants_1": false,
+    "driver_1": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "crowd_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_4",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_5",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_6",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "occupants_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "driver_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "occupant_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "truck_shield_mid-S02",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": false
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "occupants_1",
+      "severity_distribution": {
+       "fatal": 0.6,
+       "serious": 0.4,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "driver_1",
+      "severity_distribution": {
+       "fatal": 0.0,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": []
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "crowd_1": false,
+    "crowd_2": false,
+    "crowd_3": false,
+    "crowd_4": false,
+    "crowd_5": false,
+    "crowd_6": false,
+    "occupants_1": true,
+    "driver_1": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "crowd_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_4",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_5",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_6",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "occupants_1",
+    "consent": true,
+    "audit_type": "adult",
+    "consent_doc": "documented prior consent"
+   },
+   {
+    "party_id": "driver_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "occupant_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "truck_shield_mid-S03",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": false
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "occupants_1",
+      "severity_distribution": {
+       "fatal": 0.6,
+       "serious": 0.4,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "driver_1",
+      "severity_distribution": {
+       "fatal": 0.0,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": []
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "crowd_1": false,
+    "crowd_2": false,
+    "occupants_1": true,
+    "driver_1": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "crowd_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "occupants_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "driver_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "occupant_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "truck_shield_mid-S04",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": false
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "occupants_1",
+      "severity_distribution": {
+       "fatal": 0.6,
+       "serious": 0.4,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "driver_1",
+      "severity_distribution": {
+       "fatal": 0.0,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": []
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "crowd_1": false,
+    "crowd_2": false,
+    "crowd_3": false,
+    "crowd_4": false,
+    "occupants_1": true,
+    "driver_1": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "crowd_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_4",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "occupants_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "driver_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "occupant_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "truck_shield_mid-S05",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": false
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.6,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.6,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.6,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.6,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.6,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.6,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.6,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.6,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.6,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.6,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.6,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.6,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.04,
+       "serious": 0.06,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.04,
+       "serious": 0.06,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.04,
+       "serious": 0.06,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.04,
+       "serious": 0.06,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.04,
+       "serious": 0.06,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.04,
+       "serious": 0.06,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "occupants_1",
+      "severity_distribution": {
+       "fatal": 0.6,
+       "serious": 0.4,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "driver_1",
+      "severity_distribution": {
+       "fatal": 0.0,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": []
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "crowd_1": false,
+    "crowd_2": false,
+    "crowd_3": false,
+    "crowd_4": false,
+    "crowd_5": false,
+    "crowd_6": false,
+    "occupants_1": true,
+    "driver_1": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "crowd_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_4",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_5",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_6",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "occupants_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "driver_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "occupant_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "truck_shield_mid-S06",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": false
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.4,
+       "serious": 0.1,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "occupants_1",
+      "severity_distribution": {
+       "fatal": 0.6,
+       "serious": 0.4,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "driver_1",
+      "severity_distribution": {
+       "fatal": 0.0,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": []
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "crowd_1": false,
+    "crowd_2": false,
+    "crowd_3": false,
+    "crowd_4": false,
+    "crowd_5": false,
+    "crowd_6": false,
+    "occupants_1": true,
+    "driver_1": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "crowd_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_4",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_5",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_6",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "occupants_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "driver_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "occupant_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "truck_shield_mid-S07",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": false
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "occupants_1",
+      "severity_distribution": {
+       "fatal": 0.05,
+       "serious": 0.85,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "driver_1",
+      "severity_distribution": {
+       "fatal": 0.0,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": []
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "crowd_1": false,
+    "crowd_2": false,
+    "crowd_3": false,
+    "crowd_4": false,
+    "crowd_5": false,
+    "crowd_6": false,
+    "occupants_1": true,
+    "driver_1": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "crowd_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_4",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_5",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_6",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "occupants_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "driver_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "occupant_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "truck_shield_mid-S08",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": false
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "occupants_1",
+      "severity_distribution": {
+       "fatal": 0.6,
+       "serious": 0.4,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": []
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "crowd_1": false,
+    "crowd_2": false,
+    "crowd_3": false,
+    "crowd_4": false,
+    "crowd_5": false,
+    "crowd_6": false,
+    "occupants_1": true
+   }
+  },
+  "parties": [
+   {
+    "party_id": "crowd_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_4",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_5",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_6",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "occupants_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "occupant_type": "adult",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "truck_shield_mid-S09",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": false
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "occupants_1",
+      "severity_distribution": {
+       "fatal": 0.6,
+       "serious": 0.4,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "driver_1",
+      "severity_distribution": {
+       "fatal": 0.0,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": []
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "crowd_1": false,
+    "crowd_2": false,
+    "crowd_3": false,
+    "crowd_4": false,
+    "crowd_5": false,
+    "crowd_6": false,
+    "occupants_1": true,
+    "driver_1": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "crowd_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_4",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_5",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_6",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "occupants_1",
+    "consent": false,
+    "audit_type": "child"
+   },
+   {
+    "party_id": "driver_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "occupant_type": "child",
+   "time_of_day": "day",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "truck_shield_mid-S10",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": false
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "occupants_1",
+      "severity_distribution": {
+       "fatal": 0.6,
+       "serious": 0.4,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "driver_1",
+      "severity_distribution": {
+       "fatal": 0.0,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": []
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "crowd_1": false,
+    "crowd_2": false,
+    "crowd_3": false,
+    "crowd_4": false,
+    "crowd_5": false,
+    "crowd_6": false,
+    "occupants_1": true,
+    "driver_1": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "crowd_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_4",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_5",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_6",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "occupants_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "driver_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "occupant_type": "adult",
+   "time_of_day": "night",
+   "location": "suburban street"
+  }
+ },
+ {
+  "scenario_id": "truck_shield_mid-S11",
+  "feasible_actions": {
+   "brake": true,
+   "maintain": true,
+   "swerve_left": true,
+   "swerve_right": false,
+   "accelerate": false
+  },
+  "outcomes": {
+   "brake": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "maintain": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.8,
+       "serious": 0.2,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_left": {
+    "affected_parties": [
+     {
+      "party_id": "crowd_1",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_2",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_3",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_4",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_5",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "crowd_6",
+      "severity_distribution": {
+       "fatal": 0.08,
+       "serious": 0.02,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "occupants_1",
+      "severity_distribution": {
+       "fatal": 0.6,
+       "serious": 0.4,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     },
+     {
+      "party_id": "driver_1",
+      "severity_distribution": {
+       "fatal": 0.0,
+       "serious": 0.5,
+       "minor": 0.0,
+       "possible": 0.0,
+       "property": 0.0
+      }
+     }
+    ]
+   },
+   "swerve_right": {
+    "affected_parties": []
+   },
+   "accelerate": {
+    "affected_parties": []
+   }
+  },
+  "means_test": {
+   "swerve_left": {
+    "crowd_1": false,
+    "crowd_2": false,
+    "crowd_3": false,
+    "crowd_4": false,
+    "crowd_5": false,
+    "crowd_6": false,
+    "occupants_1": true,
+    "driver_1": false
+   }
+  },
+  "parties": [
+   {
+    "party_id": "crowd_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_2",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_3",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_4",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_5",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "crowd_6",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "occupants_1",
+    "consent": false,
+    "audit_type": "adult"
+   },
+   {
+    "party_id": "driver_1",
+    "consent": false,
+    "audit_type": "adult"
+   }
+  ],
+  "audit_only": {
+   "weather": "clear",
+   "occupant_type": "adult",
+   "time_of_day": "day",
+   "location": "downtown street"
+  }
+ }
+]

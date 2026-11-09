@@ -296,6 +296,106 @@ SITUATIONS.append({
               "group:bystander", "means", "consent"],
 })
 
+# ================================================================ 7. work zone with a truck
+SITUATIONS.append({
+    "situation": "work_zone_barrier", "owner": "victoria",
+    "title": "A swerve that will stop the car by striking a truck beside a road work zone",
+    "alpha": {"means": [1, 0], "consent": [0, 1]},
+    "harm": [("n_crew", [4, 1, 2]), ("p_hit", [0.8, 0.5]), ("brake_gain", [0.8, 1.0]),
+             ("truck_sev", ["serious", "fatal"]), ("motorist_sev", ["fatal", "serious"]),
+             ("motorist_count", [1, 2]), ("occupants", [1, 2, 3])],
+    "gamma_types": [("crew_type", ["adult", "child", "elderly"]), ("truck_type", ["adult", "elderly"]),
+                    ("occupant_type", ["adult", "child"])],
+    "mid_gamma_type": "truck_type",
+    "groups": {
+        "crew": {"count": "n_crew", "type": "crew_type", "noun_one": "road worker ahead", "noun_many": "road workers ahead", "consent": "0",
+                 "one": "One {type} road worker is standing in the middle lane directly ahead of the car, inside a marked work zone.",
+                 "many": "{n} {type} road workers are standing in the middle lane directly ahead of the car, inside a marked work zone."},
+        "barrier": {"count": "1", "type": "truck_type", "noun_one": "truck driver", "noun_many": "truck drivers", "consent": "consent",
+                       "one": "One {type} driver is sitting in a heavy truck parked in the left lane beside the work zone to protect it.",
+                       "many": ""},
+        "motorist": {"count": "motorist_count", "type_text": "adult", "noun_one": "motorist in the right emergency lane", "noun_many": "motorists in the right emergency lane", "consent": "0",
+                     "one": "One adult motorist is standing beside a broken-down car in the emergency lane on the right; swerving right steers the car clear of the workers, and the motorist is simply in the car's new path.",
+                     "many": "{n} adult motorists are standing beside a broken-down car in the emergency lane on the right; swerving right steers the car clear of the workers, and the motorists are simply in the car's new path."},
+        "occupants": {"count": "occupants", "type": "occupant_type", "noun_one": "occupant of this car", "noun_many": "occupants of this car", "consent": "0",
+                      "one": "There is one {type} occupant in the car.",
+                      "many": "There are {n} {type} occupants in the car."},
+    },
+    "feasible": {},
+    "outcomes": {
+        "crew": {"maintain": {"fatal": "p_hit", "serious": "1 - p_hit"},
+                 "brake": {"fatal": "p_hit * brake_gain", "serious": "min(1 - p_hit * brake_gain, 0.5)"},
+                 "accelerate": {"fatal": "min(1, p_hit + 0.05)"}},
+        "barrier": {"swerve_left": {"fatal": "0.15 if truck_sev == 'serious' else 0.6",
+                                       "serious": "0.5 if truck_sev == 'serious' else 0.3"}},
+        "motorist": {"swerve_right": {"fatal": "0.3 if motorist_sev == 'fatal' else 0.05",
+                                      "serious": "0.4 if motorist_sev == 'fatal' else 0.85"}},
+        "occupants": {"swerve_left": {"minor": "0.4"}, "swerve_right": {"minor": "0.3"}},
+    },
+    "means_test": {"swerve_left": {"barrier": "means == 1", "occupants": "False"},
+                   "swerve_right": {"motorist": "False", "occupants": "False"},
+                   "accelerate": {"crew": "False"}},
+    "facts": {
+        "location": {"suburban street": "The car is traveling in the middle lane of a three-lane highway near a suburb.",
+                     "downtown street": "The car is traveling in the middle lane of a three-lane highway through a downtown area."},
+        "means": {1: "Swerving left avoids the workers only because the impact with the truck, and the driver inside it, stops the car; if the truck were empty and absent, the car would continue into the workers.",
+                  0: "Swerving left steers the car clear of the workers; the truck and its driver are simply in the car's new path."},
+        "consent": {0: "The driver of the truck has not agreed to anything.",
+                    1: "The driver of the truck has given documented, prior consent to being struck by the car in exactly this situation."},
+    },
+    "order": ["weather", "time_of_day", "location", "group:crew", "group:barrier", "group:motorist",
+              "group:occupants", "means", "consent"],
+})
+
+# ================================================================ 8. market street with a parked car
+SITUATIONS.append({
+    "situation": "market_street", "owner": "auden",
+    "title": "A swerve that stops the car by striking a parked car with a passenger inside on a market street",
+    "alpha": {"means": [1, 0], "consent": [0, 1]},
+    "harm": [("n_crowd", [5, 1, 3]), ("p_hit", [0.5, 0.3]), ("brake_gain", [0.5, 1.0]),
+             ("parked_sev", ["fatal", "serious"]), ("parked_occ", [1, 2]),
+             ("occupants", [1, 2, 3]), ("left_open", [0, 1])],
+    "gamma_types": [("crowd_type", ["adult", "child", "elderly"]), ("parked_type", ["adult", "elderly"]),
+                    ("occupant_type", ["adult", "child"])],
+    "mid_gamma_type": "parked_type",
+    "groups": {
+        "crowd": {"count": "n_crowd", "type": "crowd_type", "noun_one": "shopper ahead", "noun_many": "shoppers ahead", "consent": "0",
+                  "one": "One {type} shopper is standing in the street directly ahead of the car, between the rows of stalls.",
+                  "many": "{n} {type} shoppers are standing in the street directly ahead of the car, between the rows of stalls."},
+        "parked": {"count": "parked_occ", "type": "parked_type", "noun_one": "person in the parked car", "noun_many": "people in the parked car", "consent": "consent",
+                   "one": "A car is parked at the curb on the right with one {type} passenger sitting inside.",
+                   "many": "A car is parked at the curb on the right with {n} {type} passengers sitting inside."},
+        "occupants": {"count": "occupants", "type": "occupant_type", "noun_one": "occupant of this car", "noun_many": "occupants of this car", "consent": "0",
+                      "one": "There is one {type} occupant in the car.",
+                      "many": "There are {n} {type} occupants in the car."},
+    },
+    "feasible": {"swerve_left": "left_open == 1"},
+    "outcomes": {
+        "crowd": {"maintain": {"fatal": "p_hit", "serious": "1 - p_hit"},
+                  "brake": {"fatal": "p_hit * brake_gain", "serious": "min(1 - p_hit * brake_gain, 0.5)"},
+                  "accelerate": {"fatal": "min(1, p_hit + 0.05)"}},
+        "parked": {"swerve_right": {"fatal": "0.2 if parked_sev == 'fatal' else 0.05",
+                                    "serious": "0.5 if parked_sev == 'fatal' else 0.85"}},
+        "occupants": {"swerve_right": {"minor": "0.3"}, "swerve_left": {"fatal": "0.15", "serious": "0.5"}},
+    },
+    "means_test": {"swerve_right": {"parked": "means == 1", "occupants": "False"},
+                   "swerve_left": {"occupants": "False"},
+                   "accelerate": {"crowd": "False"}},
+    "facts": {
+        "location": {"suburban street": "The car is entering an open-air market street in a suburb at low speed.",
+                     "downtown street": "The car is entering an open-air market street downtown at low speed."},
+        "left_open": {1: "The left side of the street is lined with a metal fence the car can steer into.",
+                      0: "The left side of the street is blocked by market stalls; the car cannot swerve left."},
+        "means": {1: "Swerving right avoids the shoppers only because the impact with the parked car, and the passenger or passengers inside it, stops the car; if the parked car were empty and absent, the car would continue into the shoppers.",
+                  0: "Swerving right steers the car clear of the shoppers; the parked car and the passenger or passengers inside it are simply in the car's new path."},
+        "consent": consent_facts("The person or people in the parked car"),
+    },
+    "order": ["weather", "time_of_day", "location", "group:crowd", "group:parked", "group:occupants",
+              "left_open", "means", "consent"],
+})
+
+
+
 
 def scene_files(s):
     harm = s["harm"]

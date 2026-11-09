@@ -1,0 +1,183 @@
+scene_id: work_zone_barrier_high
+situation: work_zone_barrier
+level: high
+title: A swerve that will stop the car by striking a truck beside a road work zone
+parent: null
+owner: victoria
+reviewed: false
+spotcheck: null
+variables:
+  means:
+    bin: alpha
+    values:
+    - 1
+    - 0
+  consent:
+    bin: alpha
+    values:
+    - 0
+    - 1
+  n_crew:
+    bin: harm
+    values:
+    - 4
+    - 1
+    - 2
+  p_hit:
+    bin: harm
+    values:
+    - 0.8
+    - 0.5
+  brake_gain:
+    bin: harm
+    values:
+    - 0.8
+    - 1.0
+  truck_sev:
+    bin: harm
+    values:
+    - serious
+    - fatal
+  motorist_sev:
+    bin: harm
+    values:
+    - fatal
+    - serious
+  motorist_count:
+    bin: harm
+    values:
+    - 1
+    - 2
+  occupants:
+    bin: harm
+    values:
+    - 1
+    - 2
+    - 3
+  weather:
+    bin: gamma
+    values:
+    - clear
+    - rain
+    - fog
+  crew_type:
+    bin: gamma
+    values:
+    - adult
+    - child
+    - elderly
+  truck_type:
+    bin: gamma
+    values:
+    - adult
+    - elderly
+  occupant_type:
+    bin: gamma
+    values:
+    - adult
+    - child
+  time_of_day:
+    bin: gamma
+    values:
+    - day
+    - night
+  location:
+    bin: gamma
+    values:
+    - suburban street
+    - downtown street
+fixed: {}
+groups:
+  crew:
+    count: n_crew
+    type: crew_type
+    noun_one: road worker ahead
+    noun_many: road workers ahead
+    consent: '0'
+    one: One {type} road worker is standing in the middle lane directly ahead of the car, inside a marked work zone.
+    many: '{n} {type} road workers are standing in the middle lane directly ahead of the car, inside a marked work zone.'
+  barrier:
+    count: '1'
+    type: truck_type
+    noun_one: truck driver
+    noun_many: truck drivers
+    consent: consent
+    one: One {type} driver is sitting in a heavy truck parked in the left lane beside the work zone to protect it.
+    many: ''
+  motorist:
+    count: motorist_count
+    type_text: adult
+    noun_one: motorist in the right emergency lane
+    noun_many: motorists in the right emergency lane
+    consent: '0'
+    one: One adult motorist is standing beside a broken-down car in the emergency lane on the right; swerving right steers the car clear of the workers, and the motorist is simply in the car's new path.
+    many: '{n} adult motorists are standing beside a broken-down car in the emergency lane on the right; swerving right steers the car clear of the workers, and the motorists are simply in the car''s new
+      path.'
+  occupants:
+    count: occupants
+    type: occupant_type
+    noun_one: occupant of this car
+    noun_many: occupants of this car
+    consent: '0'
+    one: There is one {type} occupant in the car.
+    many: There are {n} {type} occupants in the car.
+feasible: {}
+outcomes:
+  crew:
+    maintain:
+      fatal: p_hit
+      serious: 1 - p_hit
+    brake:
+      fatal: p_hit * brake_gain
+      serious: min(1 - p_hit * brake_gain, 0.5)
+    accelerate:
+      fatal: min(1, p_hit + 0.05)
+  barrier:
+    swerve_left:
+      fatal: 0.15 if truck_sev == 'serious' else 0.6
+      serious: 0.5 if truck_sev == 'serious' else 0.3
+  motorist:
+    swerve_right:
+      fatal: 0.3 if motorist_sev == 'fatal' else 0.05
+      serious: 0.4 if motorist_sev == 'fatal' else 0.85
+  occupants:
+    swerve_left:
+      minor: '0.4'
+    swerve_right:
+      minor: '0.3'
+means_test:
+  swerve_left:
+    barrier: means == 1
+    occupants: 'False'
+  swerve_right:
+    motorist: 'False'
+    occupants: 'False'
+  accelerate:
+    crew: 'False'
+facts:
+  weather:
+    clear: The weather is clear.
+    rain: It is raining.
+    fog: There is fog.
+  time_of_day:
+    day: It is daytime.
+    night: It is night.
+  location:
+    suburban street: The car is traveling in the middle lane of a three-lane highway near a suburb.
+    downtown street: The car is traveling in the middle lane of a three-lane highway through a downtown area.
+  means:
+    1: Swerving left avoids the workers only because the impact with the truck, and the driver inside it, stops the car; if the truck were empty and absent, the car would continue into the workers.
+    0: Swerving left steers the car clear of the workers; the truck and its driver are simply in the car's new path.
+  consent:
+    0: The driver of the truck has not agreed to anything.
+    1: The driver of the truck has given documented, prior consent to being struck by the car in exactly this situation.
+order:
+- weather
+- time_of_day
+- location
+- group:crew
+- group:barrier
+- group:motorist
+- group:occupants
+- means
+- consent

@@ -1,0 +1,242 @@
+# Failed review items, grouped by cause.
+#
+# One entry per cause (usually one sentence or formula in make_scenes.py), not per scenario.
+# Every N cell in reviews/<reviewer>.csv should be listed under at least one entry's found_in
+# (a cell whose note names two problems is listed under both, e.g. wrong_way_intercept S00 R6 in F02 and F08).
+# `python3 reviews.py summary` lists the N cells; this file records what we do about them.
+#
+# To add a failure:
+#   - If it has the same cause as an existing entry, add a line to that entry's found_in.
+#   - Otherwise copy the template at the bottom, give it the next id, and fill it in.
+#
+# status:  open          raised, waiting for Thomas
+#          fix-approved  Thomas approved the proposed fix (or his own); Victoria to apply
+#          fixed         applied in make_scenes.py and rebuilt; give the commit in resolved_in
+#          accepted      Thomas decided no change is needed; say why in decision
+# changes_labels: no | possibly | yes  (whether the fix could change U or K)
+
+failures:
+
+- id: F01
+  title: Means sentence says "the people/pedestrians" when only one person is ahead
+  status: open
+  items: [R6]
+  source: make_scenes.py:63, :110, :245 (means sentences use a fixed plural)
+  found_in:
+    - {scenario: cyclist_bike_lane_high-S03, item: R6, reviewer: victoria}
+    - {scenario: cyclist_bike_lane_mid-S03, item: R6, reviewer: victoria}
+    - {scenario: following_motorcycle_high-S03, item: R6, reviewer: victoria}
+    - {scenario: following_motorcycle_mid-S03, item: R6, reviewer: victoria}
+    - {scenario: one_vs_five_high-S03, item: R6, reviewer: auden}
+    - {scenario: one_vs_five_mid-S03, item: R6, reviewer: auden}
+  problem: n_ahead/n_cross = 1, but the means sentence still says "the people ahead" / "the pedestrians".
+  proposed_fix: Make the means sentence's noun follow the group count, as the group sentences already do.
+  changes_labels: no
+  decision: ""
+  resolved_in: ""
+
+- id: F02
+  title: Count hedged as "person or people" / "cyclist or cyclists" when the count is stated
+  status: open
+  items: [R6]
+  source: make_scenes.py consent_facts(...) calls at :65, :112, :159, :204, :247, :293, and the means sentences
+  found_in:
+    - {scenario: one_vs_five_high-S00, item: R6, reviewer: auden}
+    - {scenario: one_vs_five_mid-S00, item: R6, reviewer: auden}
+    - {scenario: one_vs_five_low-S00, item: R6, reviewer: auden}
+    - {scenario: wrong_way_intercept_high-S00, item: R6, reviewer: auden}
+    - {scenario: wrong_way_intercept_mid-S00, item: R6, reviewer: auden}
+    - {scenario: wrong_way_intercept_low-S00, item: R6, reviewer: auden}
+  problem: Every scenario says "the person or people in the left lane" even though the scene states the count. Logged once per anchor; applies to all twins.
+  proposed_fix: Generate the noun from the group count instead of a fixed hedge.
+  changes_labels: no
+  also_check: All six situations use the same pattern; Victoria's note on F01 mentions "cyclist or cyclists".
+  decision: ""
+  resolved_in: ""
+
+- id: F03
+  title: Consent sentence says "struck by the car" for people who are inside a vehicle
+  status: open
+  items: [R5, R7]
+  source: make_scenes.py:20-22 (consent_facts, shared by all six situations)
+  found_in:
+    - {scenario: truck_shield_high-S02, item: R5, reviewer: zarni}
+    - {scenario: truck_shield_high-S02, item: R7, reviewer: zarni}
+    - {scenario: truck_shield_mid-S02, item: R5, reviewer: zarni}
+    - {scenario: truck_shield_mid-S02, item: R7, reviewer: zarni}
+    - {scenario: truck_shield_low-S02, item: R5, reviewer: zarni}
+    - {scenario: truck_shield_low-S02, item: R7, reviewer: zarni}
+    - {scenario: wrong_way_intercept_high-S02, item: R5, reviewer: auden}
+    - {scenario: wrong_way_intercept_mid-S02, item: R5, reviewer: auden}
+    - {scenario: wrong_way_intercept_low-S02, item: R5, reviewer: auden}
+  problem: >
+    truck_shield: the occupants are inside the car and are hurt by the truck, so "struck by the car" is impossible.
+    wrong_way_intercept: their car is struck, not them, and "the car" could mean either car.
+  proposed_fix: Give each situation its own consent wording (e.g. "to this car being used to block the truck", "to their car being struck by this car").
+  changes_labels: no
+  also_check: brake_failure_van (people inside the van) uses the same template.
+  decision: ""
+  resolved_in: ""
+
+- id: F04
+  title: "means = 0 mechanism relies on the other vehicle braking itself, contradicting \"runaway\" / \"unless stopped\""
+  status: open
+  items: [R7]
+  source: make_scenes.py:203 (wrong_way_intercept), :292 (truck_shield); accelerate outcomes :197
+  found_in:
+    - {scenario: truck_shield_high-S01, item: R7, reviewer: zarni}
+    - {scenario: truck_shield_mid-S01, item: R7, reviewer: zarni}
+    - {scenario: truck_shield_low-S01, item: R7, reviewer: zarni}
+    - {scenario: wrong_way_intercept_high-S01, item: R7, reviewer: auden}
+    - {scenario: wrong_way_intercept_mid-S01, item: R7, reviewer: auden}
+    - {scenario: wrong_way_intercept_low-S01, item: R7, reviewer: auden}
+  problem: >
+    truck_shield: a runaway truck that can brake hard is not runaway, and the sentence switches from braking to an unexplained "swerve".
+    wrong_way_intercept: if the wrong-way car has emergency braking, it would brake for the bus stop too; 70% death from a braking stop
+    is implausible; this car's occupant is still injured though nothing collides (accelerate outcomes ignore means).
+  proposed_fix: Rewrite both means = 0 mechanisms so the other vehicle stops for a reason that doesn't contradict the scene; make this car's occupant harm depend on means in wrong_way_intercept.
+  changes_labels: possibly (only if the occupant numbers change)
+  decision: ""
+  resolved_in: ""
+
+- id: F05
+  title: "wrong_way_intercept means = 1: it is the car's mass, not the people, that stops it"
+  status: open
+  items: [R5]
+  source: make_scenes.py:202
+  found_in:
+    - {scenario: wrong_way_intercept_high-S00, item: R5, reviewer: auden}
+    - {scenario: wrong_way_intercept_mid-S00, item: R5, reviewer: auden}
+    - {scenario: wrong_way_intercept_low-S00, item: R5, reviewer: auden}
+  problem: >
+    Means test: remove the person; does the action still work? An empty wrong-way car would be stopped the same way,
+    which suggests means = 0 and K = accelerate at the anchor. Counterpoint: with no driver there may be no wrong-way car.
+  proposed_fix: Team ruling on how the means test treats people inside a vehicle; then reword or change the anchor.
+  changes_labels: yes (K at the anchor and every twin)
+  also_check: Same question for brake_failure_van (van occupants); Zarni's draft (review_claude_brake_failure_van_truck_shield.csv) raised it but marked Y.
+  decision: ""
+  resolved_in: ""
+
+- id: F06
+  title: "one_vs_five: nothing explains why braking doesn't reduce harm"
+  status: open
+  items: [R7]
+  source: make_scenes.py:52 (brake outcomes) - no fact sentence for p_hit or brake_gain
+  found_in:
+    - {scenario: one_vs_five_high-S00, item: R7, reviewer: auden}
+    - {scenario: one_vs_five_mid-S00, item: R7, reviewer: auden}
+    - {scenario: one_vs_five_low-S00, item: R7, reviewer: auden}
+  problem: Brake = Maintain (95% killed) with no reason given; in the brake_gain twin braking halves deaths, also unexplained. Logged once per anchor.
+  proposed_fix: Add a fact sentence for brake_gain (e.g. "The car is too close to stop in time." / "Braking can slow the car before impact.").
+  changes_labels: no
+  also_check: cyclist_bike_lane, brake_failure_van and following_motorcycle use the same brake formula.
+  decision: ""
+  resolved_in: ""
+
+- id: F07
+  title: Accelerating leaves 45% of pedestrians completely unhurt when p_hit = 0.5
+  status: open
+  items: [R7]
+  source: make_scenes.py:53 (accelerate has only a fatal term)
+  found_in:
+    - {scenario: one_vs_five_high-S05, item: R7, reviewer: auden}
+    - {scenario: one_vs_five_mid-S05, item: R7, reviewer: auden}
+    - {scenario: one_vs_five_low-S03, item: R7, reviewer: auden}
+  problem: Accelerate = 55% killed and nothing else; Brake/Maintain leave 0% unhurt. Speeding up shouldn't leave more people uninjured.
+  proposed_fix: Add serious = 1 - fatal to accelerate. Accelerate stays the worst action.
+  changes_labels: no
+  also_check: Same formula at make_scenes.py:100, :144, :236 (cyclist_bike_lane, brake_failure_van, following_motorcycle).
+  decision: ""
+  resolved_in: ""
+
+- id: F08
+  title: "wrong_way_intercept: \"the car\" used for both cars"
+  status: open
+  items: [R6]
+  source: make_scenes.py:184 ("There is one {type} occupant in the car.")
+  found_in:
+    - {scenario: wrong_way_intercept_high-S00, item: R6, reviewer: auden}
+    - {scenario: wrong_way_intercept_mid-S00, item: R6, reviewer: auden}
+    - {scenario: wrong_way_intercept_low-S00, item: R6, reviewer: auden}
+  problem: The occupant sentence comes right after the wrong-way car is introduced, so "the car" is ambiguous; action lines say "this car". Logged once per anchor.
+  proposed_fix: Say "this car" throughout.
+  changes_labels: no
+  decision: ""
+  resolved_in: ""
+
+- id: F09
+  title: "wrong_way_intercept: nothing explains why the car can't swerve"
+  status: open
+  items: [R7]
+  source: make_scenes.py:190 (both swerves hard-coded impossible)
+  found_in:
+    - {scenario: wrong_way_intercept_high-S00, item: R7, reviewer: auden}
+    - {scenario: wrong_way_intercept_mid-S00, item: R7, reviewer: auden}
+    - {scenario: wrong_way_intercept_low-S00, item: R7, reviewer: auden}
+  problem: Both swerves are "not possible" with no reason; one_vs_five gives one ("The right lane is blocked").
+  proposed_fix: Add a fixed sentence, e.g. "Barriers on both sides prevent the car from swerving."
+  changes_labels: no
+  decision: ""
+  resolved_in: ""
+
+- id: F10
+  title: "wrong_way_intercept: bystander described two different ways"
+  status: open
+  items: [R6]
+  source: make_scenes.py:186-187
+  found_in:
+    - {scenario: wrong_way_intercept_high-S11, item: R6, reviewer: auden}
+  problem: Scene says "near the point where the cars would meet"; action line says "near the intercept point".
+  proposed_fix: Use the same phrase in noun_one/noun_many.
+  changes_labels: no
+  decision: ""
+  resolved_in: ""
+
+- id: F11
+  title: "\"child people\""
+  status: open
+  items: [R6]
+  source: make_scenes.py:179 ("{n} {type} people ...")
+  found_in:
+    - {scenario: wrong_way_intercept_high-S14, item: R6, reviewer: auden}
+  problem: "\"Four child people are waiting\" is ungrammatical."
+  proposed_fix: Map type to a noun (child -> children, elderly -> elderly people, adult -> adults).
+  changes_labels: no
+  also_check: truck_shield uses the same template (make_scenes.py:268).
+  decision: ""
+  resolved_in: ""
+
+# Not checklist failures, but worth a decision.
+observations:
+
+- id: O01
+  title: Mid and low scenarios duplicate high ones
+  status: open
+  detail: 228 entries but only 120 distinct scenarios; every mid/low entry has the same narrative, record and labels as a high one. Affects training weight and stats like "K differs from U in 184 of 228".
+  decision: ""
+
+- id: O02
+  title: "one_vs_five occupants twins change nothing"
+  status: open
+  detail: occupants (harm bin) only affects swerve_right, which is impossible at the anchor, so one_vs_five_high-S10/S11 have the same numbers and labels as the anchor.
+  decision: ""
+
+- id: O03
+  title: README's "diff -r out expected" fails on line endings
+  status: open
+  detail: Python's csv writes CRLF; expected/ CSVs are stored with LF, so all 19 CSVs differ. scenarios.json is byte-identical. Fix with lineterminator="\n" (verify_round.py:42, reference_pipeline.py:258) or .gitattributes.
+  decision: ""
+
+# Template: copy, give the next id, fill in.
+# - id: F12
+#   title:
+#   status: open
+#   items: []
+#   source: make_scenes.py:<line>
+#   found_in:
+#     - {scenario: , item: , reviewer: }
+#   problem:
+#   proposed_fix:
+#   changes_labels: no
+#   decision: ""
+#   resolved_in: ""

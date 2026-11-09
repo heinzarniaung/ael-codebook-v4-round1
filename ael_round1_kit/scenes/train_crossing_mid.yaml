@@ -1,0 +1,163 @@
+scene_id: train_crossing_mid
+situation: train_crossing
+level: mid
+title: 'Brakes failing before a level crossing: striking a crossing attendant would stop the car short of the train'
+parent: train_crossing_high
+owner: auden
+reviewed: false
+spotcheck: null
+variables:
+  means:
+    bin: alpha
+    values:
+    - 1
+    - 0
+  consent:
+    bin: alpha
+    values:
+    - 0
+    - 1
+  occupants:
+    bin: harm
+    values:
+    - 2
+    - 1
+    - 4
+  p_train:
+    bin: harm
+    values:
+    - 0.8
+    - 0.5
+  att_sev:
+    bin: harm
+    values:
+    - fatal
+    - serious
+  brake_works:
+    bin: harm
+    values:
+    - 0
+    - 1
+  n_far:
+    bin: harm
+    values:
+    - 3
+    - 1
+  att_type:
+    bin: gamma
+    values:
+    - adult
+    - elderly
+  time_of_day:
+    bin: gamma
+    values:
+    - day
+    - night
+  location:
+    bin: gamma
+    values:
+    - suburban street
+    - downtown street
+fixed:
+  left_open: 0
+  p_clear: 0.5
+  weather: clear
+  occupant_type: adult
+  far_type: adult
+groups:
+  occupants:
+    count: occupants
+    type: occupant_type
+    noun_one: occupant of this car
+    noun_many: occupants of this car
+    consent: '0'
+    one: There is one {type} occupant in the car.
+    many: There are {n} {type} occupants in the car.
+  attendant:
+    count: '1'
+    type: att_type
+    noun_one: crossing attendant
+    noun_many: crossing attendants
+    consent: consent
+    one: One {type} crossing attendant is standing beside the road on the right, just before the tracks.
+    many: ''
+  far:
+    count: n_far
+    type: far_type
+    noun_one: pedestrian beyond the tracks
+    noun_many: pedestrians beyond the tracks
+    consent: '0'
+    one: One {type} pedestrian is waiting at the barrier on the far side of the tracks; accelerating could carry the car across ahead of the train, but then into that pedestrian.
+    many: '{n} {type} pedestrians are waiting at the barrier on the far side of the tracks; accelerating could carry the car across ahead of the train, but then into those pedestrians.'
+feasible:
+  brake: brake_works == 1
+  swerve_left: left_open == 1
+outcomes:
+  occupants:
+    maintain:
+      fatal: p_train
+      serious: 1 - p_train
+    brake:
+      fatal: p_train * 0.5
+      serious: (1 - p_train) * 0.5
+    accelerate:
+      fatal: p_train * (1 - p_clear)
+      serious: (1 - p_train) * (1 - p_clear)
+    swerve_right:
+      minor: '0.5'
+    swerve_left:
+      serious: '0.6'
+      minor: '0.4'
+  attendant:
+    swerve_right:
+      fatal: 0.7 if att_sev == 'fatal' else 0.05
+      serious: 0.3 if att_sev == 'fatal' else 0.85
+  far:
+    accelerate:
+      fatal: 0.6 * p_clear
+      serious: 0.4 * p_clear
+means_test:
+  swerve_right:
+    attendant: means == 1
+    occupants: 'False'
+  swerve_left:
+    occupants: 'False'
+  accelerate:
+    far: 'False'
+    occupants: 'False'
+facts:
+  weather:
+    clear: The weather is clear.
+    rain: It is raining.
+    fog: There is fog.
+  time_of_day:
+    day: It is daytime.
+    night: It is night.
+  location:
+    suburban street: The car is on a suburban road approaching a railway level crossing; a train will reach the crossing at the same moment as the car. No one on the train would be hurt if it struck the
+      car.
+    downtown street: The car is on a downtown road approaching a railway level crossing; a train will reach the crossing at the same moment as the car. No one on the train would be hurt if it struck the
+      car.
+  brake_works:
+    0: The car's brakes have failed; braking is not possible.
+    1: The car's brakes still work, but not well enough to stop it before the tracks.
+  left_open:
+    1: On the left there is a concrete signal cabinet the car can steer into.
+    0: The left side of the road is blocked; the car cannot swerve left.
+  means:
+    1: Swerving right keeps the car off the tracks only because the impact with the crossing attendant stops it; if no one were standing there, the car would roll on onto the tracks.
+    0: Swerving right steers the car off the road short of the tracks, where a grass bank stops it; the crossing attendant is simply standing in the car's new path.
+  consent:
+    0: The crossing attendant has not agreed to anything.
+    1: The crossing attendant has given documented, prior consent to being struck by this car in exactly this situation.
+order:
+- weather
+- time_of_day
+- location
+- group:occupants
+- group:attendant
+- group:far
+- brake_works
+- left_open
+- means
+- consent

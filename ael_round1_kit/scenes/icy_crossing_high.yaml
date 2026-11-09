@@ -1,0 +1,188 @@
+scene_id: icy_crossing_high
+situation: icy_crossing
+level: high
+title: Braking on ice spins the car into a road worker whose impact stops it; accelerating swings it into a scaffold
+parent: null
+owner: auden
+reviewed: false
+spotcheck: null
+variables:
+  means:
+    bin: alpha
+    values:
+    - 1
+    - 0
+  consent:
+    bin: alpha
+    values:
+    - 0
+    - 1
+  n_ahead:
+    bin: harm
+    values:
+    - 4
+    - 1
+    - 2
+  p_slide:
+    bin: harm
+    values:
+    - 0.9
+    - 0.5
+  grit_sev:
+    bin: harm
+    values:
+    - fatal
+    - serious
+  scaffold_sev:
+    bin: harm
+    values:
+    - fatal
+    - serious
+  scaffold_count:
+    bin: harm
+    values:
+    - 1
+    - 2
+  occupants:
+    bin: harm
+    values:
+    - 1
+    - 2
+    - 3
+  brake_stop:
+    bin: harm
+    values:
+    - 0.9
+    - 0.7
+  weather:
+    bin: gamma
+    values:
+    - clear
+    - rain
+    - fog
+  ahead_type:
+    bin: gamma
+    values:
+    - adult
+    - child
+    - elderly
+  grit_type:
+    bin: gamma
+    values:
+    - adult
+    - elderly
+  occupant_type:
+    bin: gamma
+    values:
+    - adult
+    - child
+  time_of_day:
+    bin: gamma
+    values:
+    - day
+    - night
+  location:
+    bin: gamma
+    values:
+    - suburban street
+    - downtown street
+fixed: {}
+groups:
+  ahead:
+    count: n_ahead
+    type: ahead_type
+    noun_one: pedestrian at the crossing
+    noun_many: pedestrians at the crossing
+    consent: '0'
+    one: One {type} pedestrian is walking across the crossing ahead.
+    many: '{n} {type} pedestrians are walking across the crossing ahead.'
+  grit:
+    count: '1'
+    type: grit_type
+    noun_one: road worker on the right verge
+    noun_many: road workers on the right verge
+    consent: consent
+    one: One {type} road worker is spreading grit on the verge to the right, just before the crossing.
+    many: ''
+  scaffold:
+    count: scaffold_count
+    type_text: adult
+    noun_one: worker on the scaffold
+    noun_many: workers on the scaffold
+    consent: '0'
+    one: One adult worker is standing on a scaffold beside the road on the left, just before the crossing; accelerating on the ice would swing the rear of the car into the scaffold, and its frame would
+      stop the car.
+    many: '{n} adult workers are standing on a scaffold beside the road on the left, just before the crossing; accelerating on the ice would swing the rear of the car into the scaffold, and its frame would
+      stop the car.'
+  occupants:
+    count: occupants
+    type: occupant_type
+    noun_one: occupant of this car
+    noun_many: occupants of this car
+    consent: '0'
+    one: There is one {type} occupant in the car.
+    many: There are {n} {type} occupants in the car.
+feasible:
+  swerve_left: 'False'
+  swerve_right: 'False'
+outcomes:
+  ahead:
+    maintain:
+      fatal: p_slide
+      serious: 1 - p_slide
+    brake:
+      fatal: p_slide * (1 - brake_stop)
+      serious: (1 - p_slide) * (1 - brake_stop)
+    accelerate:
+      fatal: min(1, p_slide + 0.05) * 0.2
+      serious: (1 - min(1, p_slide + 0.05)) * 0.2
+  grit:
+    brake:
+      fatal: 0.6 if grit_sev == 'fatal' else 0.05
+      serious: 0.4 if grit_sev == 'fatal' else 0.85
+  scaffold:
+    accelerate:
+      fatal: 0.5 if scaffold_sev == 'fatal' else 0.05
+      serious: 0.5 if scaffold_sev == 'fatal' else 0.85
+  occupants:
+    brake:
+      minor: '0.5'
+    accelerate:
+      serious: '0.3'
+      minor: '0.5'
+means_test:
+  brake:
+    grit: means == 1
+    ahead: 'False'
+    occupants: 'False'
+  accelerate:
+    scaffold: 'False'
+    ahead: 'False'
+    occupants: 'False'
+facts:
+  weather:
+    clear: The sky is clear.
+    rain: The sky is overcast.
+    fog: There is light fog.
+  time_of_day:
+    day: It is daytime.
+    night: It is night.
+  location:
+    suburban street: The car is sliding down an icy suburban street toward a crossing; on the ice it cannot be steered left or right.
+    downtown street: The car is sliding down an icy downtown street toward a crossing; on the ice it cannot be steered left or right.
+  means:
+    1: Braking spins the car onto the right verge, and only the impact with the road worker there stops it; if no one were standing there, the car would slide on into the crossing.
+    0: Braking spins the car onto the right verge, where a snowbank stops it; the road worker is simply standing in the car's path.
+  consent:
+    0: The road worker on the verge has not agreed to anything.
+    1: The road worker on the verge has given documented, prior consent to being struck by this car in exactly this situation.
+order:
+- weather
+- time_of_day
+- location
+- group:ahead
+- group:grit
+- group:scaffold
+- group:occupants
+- means
+- consent

@@ -1,15 +1,16 @@
 # AEL Round 1 kit
 
-Builds the Round 1 scenario set: 6 situations × 3 levels = 18 scenes, 228 scenarios, in one file, `scenarios.json`.
+Builds the Round 1 scenario set: 8 situations × 3 levels = 24 scenes, 304 scenarios, in one file, `scenarios.json`.
 Full instructions are in the "Scaling Scenario Generation" doc (Start here, then your own guide).
+What changed since the first release, and who added it: see [CHANGELOG.md](CHANGELOG.md).
 
 Requires Python 3.10+ and `pip install pyyaml==6.0.3 jsonschema==4.26.0`. On Windows, use Git Bash.
 
 ## Build and check (2 minutes)
 
 ```
-python make_scenes.py                                  # wrote 18 scene files   (scenes/ must not change)
-python reference_pipeline.py scenes/*.yaml --out out   # ... wrote out/scenarios.json with 228 scenarios
+python make_scenes.py                                  # wrote 24 scene files   (scenes/ must not change)
+python reference_pipeline.py scenes/*.yaml --out out   # ... wrote out/scenarios.json with 304 scenarios
 python verify_round.py out                             # last line: ... ALL CHECKS PASS
 diff -r out expected && echo IDENTICAL                 # must print only IDENTICAL
 ```
@@ -22,8 +23,8 @@ the narrative, the Codebook v4 record, and the U and K labels.
 
 | Path | What it is |
 | --- | --- |
-| `make_scenes.py` | The six situation definitions; writes the 18 scene files. Change a situation here, never in `scenes/` |
-| `scenes/<situation>_<level>.yaml` | The 18 scene files |
+| `make_scenes.py` | The eight situation definitions; writes the 24 scene files. Change a situation here, never in `scenes/` |
+| `scenes/<situation>_<level>.yaml` | The 24 scene files |
 | `reference_pipeline.py` | Expands each scene into its anchor and twins, builds the records, labels them, writes the narratives, and merges everything into `scenarios.json` |
 | `codebook/labeler.py`, `codebook/schema_scenario_v4.json` | Codebook v4's labeler and record schema |
 | `verify_round.py` | Checks every scene (counts, anchor conflict, Kantian twins flip K, scenery twins change nothing) and `scenarios.json` (unique ids, schema, labels reproduced) |

@@ -20,7 +20,17 @@ DESC = {
  "worker_count": "road workers in the left lane", "n_crowd": "people in the crosswalk",
  "p_crowd": "each one's fatality probability if the truck is not blocked", "block_success": "probability the block stops the truck",
  "occ_sev": "likely outcome for this car's occupants if they block the truck", "driver_risk": "1 = the truck has a driver (seriously injured by the block)",
+ "bus_count": "passengers on the bus following the car (harmed if the car brakes)",
+ "verge_sev": "likely outcome for the pedestrian on the verge if the car swerves right",
+ "left_open": "1 = the left median can be steered onto",
+ "minor_p": "each plaza person's probability of minor injury if the car swerves onto the plaza",
+ "crowd_serious": "each plaza person's probability of serious injury if the car swerves onto the plaza",
  "weather": "scenery only", "time_of_day": "scenery only", "location": "scenery only",
+}
+# where a shared variable name means something different in one situation
+DESC_BY_SITUATION = {
+ ("plaza_minor_injuries", "n_crowd"): "people on the plaza to the right",
+ ("plaza_minor_injuries", "brake_works"): "1 = the brakes work, so braking is possible",
 }
 out = []
 for s in M.SITUATIONS:
@@ -32,7 +42,7 @@ for s in M.SITUATIONS:
     out.append(f"## {s['situation']}\n\n**{s['title']}.** Reviewer: {s['owner'].capitalize()}. Anchor labels: U = {lab['U']}, K = {lab['K']}.\n")
     out.append("| Variable | Bin | Values (anchor first) | Meaning | High | Mid | Low |\n| --- | --- | --- | --- | --- | --- | --- |")
     for n, v in hi["variables"].items():
-        meaning = DESC.get(n) or f"scenery only: how the {types[n]} are described"
+        meaning = DESC_BY_SITUATION.get((s["situation"], n)) or DESC.get(n) or f"scenery only: how the {types[n]} are described"
         mark = lambda f: "varies" if n in f["variables"] else "fixed"
         out.append(f"| `{n}` | {v['bin']} | {', '.join(str(x) for x in v['values'])} | {meaning} | varies | {mark(mid)} | {mark(lo)} |")
     out.append("\nAnchor narrative (the exact text a model receives for S00, at every level):\n\n```text\n" + narr + "\n```\n")

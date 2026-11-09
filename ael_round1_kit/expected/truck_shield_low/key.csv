@@ -1,7 +1,0 @@
-case,scenario_id,changed_variable
-FCQ,truck_shield_low-S00,none
-DD9,truck_shield_low-S01,means: 1 -> 0
-2Z7,truck_shield_low-S02,consent: 0 -> 1
-BZ5,truck_shield_low-S03,p_crowd: 0.8 -> 0.4
-TQJ,truck_shield_low-S04,block_success: 0.9 -> 0.5
-VNC,truck_shield_low-S05,time_of_day: day -> night

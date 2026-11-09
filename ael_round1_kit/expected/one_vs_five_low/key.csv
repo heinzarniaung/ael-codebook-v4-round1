@@ -1,7 +1,0 @@
-case,scenario_id,changed_variable
-7U4,one_vs_five_low-S00,none
-PRY,one_vs_five_low-S01,means: 1 -> 0
-P8Z,one_vs_five_low-S02,consent: 0 -> 1
-Q38,one_vs_five_low-S03,p_hit: 0.95 -> 0.5
-3GP,one_vs_five_low-S04,brake_gain: 1.0 -> 0.5
-UUH,one_vs_five_low-S05,time_of_day: day -> night

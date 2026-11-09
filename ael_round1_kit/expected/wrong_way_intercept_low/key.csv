@@ -1,7 +1,0 @@
-case,scenario_id,changed_variable
-72G,wrong_way_intercept_low-S00,none
-9JZ,wrong_way_intercept_low-S01,means: 1 -> 0
-W9D,wrong_way_intercept_low-S02,consent: 0 -> 1
-D25,wrong_way_intercept_low-S03,p_stop: 0.9 -> 0.5
-P7W,wrong_way_intercept_low-S04,success: 0.9 -> 0.5
-FKG,wrong_way_intercept_low-S05,time_of_day: day -> night

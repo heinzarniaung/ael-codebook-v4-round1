@@ -50,8 +50,8 @@ Outputs for the original 18 scenes are byte-for-byte unchanged, apart from the t
 - `make_scenes.py`: the two new situation definitions, the truck_shield sentences, and the docstring count.
 - `make_catalog.py`: descriptions for the new variables, plus `DESC_BY_SITUATION` for shared names that
   mean something different in one situation.
-- Generated files are not part of this change: rebuild `scenes/` with `make_scenes.py`, `expected/` and
-  `../round1_scenarios.json` with `reference_pipeline.py`, and `catalog.md` with `make_catalog.py`.
+- Generated files are no longer tracked in git (`.gitignore`): `scenes/`, `expected/`, `catalog.md` and
+  `../round1_scenarios.json`. The README's build steps now write straight into `expected/` and recreate all of them.
 - `README.md`: counts updated to 8 / 24 / 304.
 
 ### Known issues, not fixed

@@ -1,7 +1,0 @@
-case,scenario_id,changed_variable
-HGE,brake_failure_van_low-S00,none
-MWK,brake_failure_van_low-S01,means: 1 -> 0
-6ZQ,brake_failure_van_low-S02,consent: 0 -> 1
-37E,brake_failure_van_low-S03,p_hit: 0.8 -> 0.5
-M9J,brake_failure_van_low-S04,brake_works: 0 -> 1
-VWC,brake_failure_van_low-S05,time_of_day: day -> night

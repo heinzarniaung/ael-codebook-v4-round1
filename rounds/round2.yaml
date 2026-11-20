@@ -1,0 +1,18 @@
+# Round 2: situations added after Round 1's review, in the order they were added.
+# None of them has a review sheet yet (python tools/reviews.py round2 new <reviewer> <situation> ...).
+name: round2
+status: open
+situations:
+  - work_zone_barrier
+  - market_street
+  - tailgating_bus
+  - plaza_minor_injuries
+  - icy_crossing
+  - train_crossing
+  - mirror_swerve
+  - lane_edge
+  - two_means
+  - steward_or_pair
+  - signal_crossing
+  - toll_booth_tie
+  - car_wash_tie

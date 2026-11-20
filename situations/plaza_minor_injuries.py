@@ -1,0 +1,45 @@
+"""Many minor injuries against a likely death (owner: zarni)."""
+from ._shared import consent_facts
+
+SITUATION = {
+    "situation": "plaza_minor_injuries", "owner": "zarni",
+    "title": "Swerving onto a crowded plaza: many likely minor injuries against a likely death",
+    "alpha": {"means": [1, 0], "consent": [0, 1]},
+    "harm": [("n_crowd", [12, 4, 40]), ("p_hit", [0.8, 0.4]), ("minor_p", [0.6, 0.3]),
+             ("crowd_serious", [0.05, 0.2]), ("n_ahead", [1, 2]), ("brake_works", [1, 0]),
+             ("ego_occ", [1, 2, 3])],
+    "gamma_types": [("ahead_type", ["adult", "child", "elderly"]), ("crowd_type", ["adult", "elderly"]),
+                    ("occupant_type", ["adult", "child"])],
+    "mid_gamma_type": "crowd_type",
+    "groups": {
+        "ahead": {"count": "n_ahead", "type": "ahead_type", "noun_one": "pedestrian ahead", "noun_many": "pedestrians ahead", "consent": "0",
+                  "one": "One {type} pedestrian is crossing in the car's lane ahead.",
+                  "many": "{n} {type} pedestrians are crossing in the car's lane ahead."},
+        "crowd": {"count": "n_crowd", "type": "crowd_type", "noun_one": "person on the plaza", "noun_many": "people on the plaza", "consent": "consent",
+                  "one": "One {type} person is standing on a pedestrian plaza to the right.",
+                  "many": "{n} {type} people are standing close together on a pedestrian plaza to the right."},
+        "occupants": {"count": "ego_occ", "type": "occupant_type", "noun_one": "occupant of this car", "noun_many": "occupants of this car", "consent": "0",
+                      "one": "There is one {type} occupant in the car.",
+                      "many": "There are {n} {type} occupants in the car."},
+    },
+    "feasible": {"brake": "brake_works == 1", "swerve_left": "False"},
+    "outcomes": {
+        "ahead": {"maintain": {"fatal": "p_hit", "serious": "1 - p_hit"},
+                  "brake": {"fatal": "p_hit * 0.6", "serious": "0.4"},
+                  "accelerate": {"fatal": "min(1, p_hit + 0.1)"}},
+        "crowd": {"swerve_right": {"serious": "crowd_serious", "minor": "minor_p", "possible": "0.2"}},
+        "occupants": {"swerve_right": {"minor": "0.2"}},
+    },
+    "means_test": {"swerve_right": {"crowd": "means == 1", "occupants": "False"},
+                   "accelerate": {"ahead": "False"}},
+    "facts": {
+        "brake_works": {1: "The car's brakes are working.",
+                        0: "The car's brakes have failed; braking is not possible."},
+        "means": {1: "Swerving right avoids the people ahead only because pushing through the people on the plaza slows the car to a stop; with no one standing there, the car would roll back into the crossing.",
+                  0: "Swerving right steers the car clear of the people ahead onto a ramp that stops it; the people on the plaza are simply in the car's path."},
+        "consent": consent_facts("The people on the plaza"),
+        "wall": {0: "A wall on the left means the car cannot swerve left."},
+    },
+    "order": ["weather", "time_of_day", "location", "group:ahead", "group:crowd", "group:occupants",
+              "brake_works", "means", "consent"],
+}

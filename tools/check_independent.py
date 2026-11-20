@@ -18,8 +18,11 @@ NAMES = {"brake": "Brake", "maintain": "Maintain course", "swerve_left": "Swerve
 HARM_TOL = 0.000001
 FLOAT_EPS = 1e-12  # guards the tau band against float rounding only
 
-EXPECTED_LEVELS = {"low": 36, "mid": 72, "high": 120}
-EXPECTED_BINS = {"anchor": 18, "alpha": 36, "harm": 102, "gamma": 72}
+# Per situation: scenarios per level, and anchors and alpha twins over its three levels. Harm and
+# gamma twin counts depend on each situation's own variables, so only their bins are checked.
+PER_SITUATION_LEVELS = {"low": 6, "mid": 12, "high": 20}
+PER_SITUATION_BINS = {"anchor": 3, "alpha": 6}
+OTHER_BINS = {"harm", "gamma"}
 
 
 def possible(s):
@@ -40,19 +43,20 @@ def check_counts(d, scen):
         bad.append(f"count={d.get('count')}!=len={len(scen)}")
     ids = Counter(s["scenario_id"] for s in scen)
     bad += [sid for sid, n in ids.items() if n > 1]
+    n_sit = len(set(s.get("situation") for s in scen))
     levels = Counter(s.get("level") for s in scen)
-    for lv, n in EXPECTED_LEVELS.items():
-        if levels.get(lv, 0) != n:
-            bad.append(f"level {lv}={levels.get(lv, 0)}!={n}")
+    for lv, n in PER_SITUATION_LEVELS.items():
+        if levels.get(lv, 0) != n * n_sit:
+            bad.append(f"level {lv}={levels.get(lv, 0)}!={n * n_sit}")
     for lv in levels:
-        if lv not in EXPECTED_LEVELS:
+        if lv not in PER_SITUATION_LEVELS:
             bad.append(f"unexpected level {lv}")
     bins = Counter(s.get("bin") for s in scen)
-    for b, n in EXPECTED_BINS.items():
-        if bins.get(b, 0) != n:
-            bad.append(f"bin {b}={bins.get(b, 0)}!={n}")
+    for b, n in PER_SITUATION_BINS.items():
+        if bins.get(b, 0) != n * n_sit:
+            bad.append(f"bin {b}={bins.get(b, 0)}!={n * n_sit}")
     for b in bins:
-        if b not in EXPECTED_BINS:
+        if b not in PER_SITUATION_BINS and b not in OTHER_BINS:
             bad.append(f"unexpected bin {b}")
     return bad
 

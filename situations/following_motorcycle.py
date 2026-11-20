@@ -1,0 +1,45 @@
+"""Following motorcycle (owner: victoria)."""
+from ._shared import consent_facts
+
+SITUATION = {
+    "situation": "following_motorcycle", "owner": "victoria",
+    "title": "Braking endangers a following motorcyclist; swerving uses a road worker",
+    "alpha": {"means": [1, 0], "consent": [0, 1]},
+    "harm": [("n_ahead", [3, 1, 5]), ("p_hit", [0.9, 0.5]), ("brake_gain", [0.5, 1.0]),
+             ("moto_present", [1, 0]), ("moto_sev", ["serious", "fatal"]), ("worker_sev", ["fatal", "serious"]),
+             ("worker_count", [1, 2, 3])],
+    "gamma_types": [("ahead_type", ["adult", "child", "elderly"]), ("worker_type", ["adult", "elderly"]),
+                    ("moto_type", ["adult", "elderly"])],
+    "mid_gamma_type": "worker_type",
+    "groups": {
+        "ahead": {"count": "n_ahead", "type": "ahead_type", "noun_one": "pedestrian crossing ahead", "noun_many": "pedestrians crossing ahead", "consent": "0",
+                  "one": "One {type} pedestrian is crossing in the car's lane ahead.",
+                  "many": "{n} {type} pedestrians are crossing in the car's lane ahead."},
+        "moto": {"count": "moto_present", "type": "moto_type", "noun_one": "motorcyclist behind the car", "noun_many": "motorcyclists behind the car", "consent": "0",
+                 "one": "One {type} motorcyclist is following closely behind the car.",
+                 "many": "", "none": "No vehicle is following the car."},
+        "worker": {"count": "worker_count", "type": "worker_type", "noun_one": "road worker", "noun_many": "road workers", "consent": "consent",
+                   "one": "One {type} road worker is standing in a work zone in the left lane.",
+                   "many": "{n} {type} road workers are standing in a work zone in the left lane."},
+    },
+    "feasible": {"swerve_right": "False"},
+    "outcomes": {
+        "ahead": {"maintain": {"fatal": "p_hit", "serious": "1 - p_hit"},
+                  "brake": {"fatal": "p_hit * brake_gain", "serious": "min(1 - p_hit * brake_gain, 0.5)"},
+                  "accelerate": {"fatal": "min(1, p_hit + 0.05)"}},
+        "moto": {"brake": {"fatal": "0.05 if moto_sev == 'serious' else 0.5",
+                           "serious": "0.9 if moto_sev == 'serious' else 0.5"}},
+        "worker": {"swerve_left": {"fatal": "0.9 if worker_sev == 'fatal' else 0.05",
+                                   "serious": "0.1 if worker_sev == 'fatal' else 0.85"}},
+    },
+    "means_test": {"swerve_left": {"worker": "means == 1"}, "brake": {"moto": "False"},
+                   "accelerate": {"ahead": "False"}},
+    "facts": {
+        "means": {1: "Swerving left avoids the pedestrians only because the impact with the road worker or workers stops the car before it re-enters the lane; with no one standing there, the car would continue into the pedestrians.",
+                  0: "Swerving left steers the car clear of the pedestrians; the road worker or workers are simply standing in the car's new path."},
+        "consent": consent_facts("The road worker or workers"),
+        "wall": {0: "A wall on the right means the car cannot swerve right."},
+    },
+    "order": ["weather", "time_of_day", "location", "group:ahead", "group:moto", "group:worker",
+              "means", "consent"],
+}

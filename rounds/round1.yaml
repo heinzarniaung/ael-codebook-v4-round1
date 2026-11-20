@@ -1,0 +1,12 @@
+# Round 1: the first six situations, written and reviewed together by all three reviewers
+# (reviews/round1/). Freeze it (git tag round-1 plus a release with its scenarios.json) once every
+# entry in reviews/round1/failed_items.yaml is fixed or accepted.
+name: round1
+status: in review
+situations:
+  - one_vs_five
+  - cyclist_bike_lane
+  - brake_failure_van
+  - wrong_way_intercept
+  - following_motorcycle
+  - truck_shield

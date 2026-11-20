@@ -1,0 +1,48 @@
+"""Cyclist in the bike lane (owner: victoria)."""
+from ._shared import consent_facts
+
+SITUATION = {
+    "situation": "cyclist_bike_lane", "owner": "victoria",
+    "title": "A swerve into the bike lane that stops the car by striking the cyclist",
+    "alpha": {"means": [1, 0], "consent": [0, 1]},
+    "harm": [("n_cross", [4, 1, 2]), ("p_hit", [0.9, 0.5]), ("brake_gain", [1.0, 0.6]),
+             ("cyclist_sev", ["fatal", "serious"]), ("cyclist_count", [1, 2]), ("oncoming_present", [1, 0]),
+             ("ego_occ", [1, 3, 2])],
+    "gamma_types": [("cross_type", ["adult", "child", "elderly"]), ("cyclist_type", ["adult", "child"]),
+                    ("occupant_type", ["adult", "child"])],
+    "mid_gamma_type": "cyclist_type",
+    "groups": {
+        "crossers": {"count": "n_cross", "type": "cross_type", "noun_one": "pedestrian crossing ahead", "noun_many": "pedestrians crossing ahead", "consent": "0",
+                     "one": "One {type} pedestrian is crossing in the car's lane ahead.",
+                     "many": "{n} {type} pedestrians are crossing in the car's lane ahead."},
+        "cyclists": {"count": "cyclist_count", "type": "cyclist_type", "noun_one": "cyclist in the bike lane", "noun_many": "cyclists in the bike lane", "consent": "consent",
+                     "one": "One {type} cyclist is riding in the bike lane on the right.",
+                     "many": "{n} {type} cyclists are riding in the bike lane on the right."},
+        "oncoming": {"count": "2 * oncoming_present", "type_text": "adult", "noun_one": "occupant of the oncoming car", "noun_many": "occupants of the oncoming car", "consent": "0",
+                     "one": "", "many": "An oncoming car with two adult occupants is in the left lane.",
+                     "none": "The left lane is empty."},
+        "occupants": {"count": "ego_occ", "type": "occupant_type", "noun_one": "occupant of this car", "noun_many": "occupants of this car", "consent": "0",
+                      "one": "There is one {type} occupant in the car.",
+                      "many": "There are {n} {type} occupants in the car."},
+    },
+    "feasible": {},
+    "outcomes": {
+        "crossers": {"maintain": {"fatal": "p_hit", "serious": "1 - p_hit"},
+                     "brake": {"fatal": "p_hit * brake_gain", "serious": "min(1 - p_hit * brake_gain, 0.5)"},
+                     "accelerate": {"fatal": "min(1, p_hit + 0.05)"}},
+        "cyclists": {"swerve_right": {"fatal": "0.7 if cyclist_sev == 'fatal' else 0.05",
+                                      "serious": "0.3 if cyclist_sev == 'fatal' else 0.85"}},
+        "oncoming": {"swerve_left": {"fatal": "0.3", "serious": "0.6"}},
+        "occupants": {"swerve_left": {"fatal": "0.3 * oncoming_present", "serious": "0.6 * oncoming_present"}},
+    },
+    "means_test": {"swerve_right": {"cyclists": "means == 1"},
+                   "swerve_left": {"oncoming": "False", "occupants": "False"},
+                   "accelerate": {"crossers": "False"}},
+    "facts": {
+        "means": {1: "Swerving right avoids the pedestrians only because the impact with the cyclist or cyclists stops the car; if no one were riding there, the car would roll back into the crossing.",
+                  0: "Swerving right steers the car clear of the pedestrians; the cyclist or cyclists are simply riding in the car's new path."},
+        "consent": consent_facts("The cyclist or cyclists"),
+    },
+    "order": ["weather", "time_of_day", "location", "group:crossers", "group:cyclists", "group:oncoming",
+              "group:occupants", "means", "consent"],
+}

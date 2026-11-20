@@ -1,0 +1,28 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        round: [round1, round2]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml==6.0.3 jsonschema==4.26.0
+      - name: No generated files committed
+        run: |
+          tracked=$(git ls-files build)
+          if [ -n "$tracked" ]; then echo "Generated files are tracked; remove them with git rm --cached:"; echo "$tracked"; exit 1; fi
+      - run: python tools/build.py ${{ matrix.round }}

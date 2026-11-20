@@ -1,13 +1,15 @@
 """Print one scenario for review: narrative, numbers, labels, and what differs from its anchor.
 
-Usage:  python show_scenario.py one_vs_five_high-S01            (reads expected/)
-        python show_scenario.py one_vs_five_high-S01 --out out  (reads your own run)
-        python show_scenario.py one_vs_five_high --all          (every scenario of a scene, one after another)
+Usage:  python tools/show_scenario.py one_vs_five_high-S01            (finds it in build/<round>/expected/)
+        python tools/show_scenario.py one_vs_five_high-S01 --out out  (reads your own run)
+        python tools/show_scenario.py one_vs_five_high --all          (every scenario of a scene, one after another)
 """
 import argparse
 import json
 import os
 import re
+
+import rounds
 
 
 def load(out, scene):
@@ -58,9 +60,16 @@ def show(out, sid):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("scenario")
-    ap.add_argument("--out", default="expected")
+    ap.add_argument("--out", help="default: the build/<round>/expected folder that has this scene")
     ap.add_argument("--all", action="store_true")
     a = ap.parse_args()
+    if a.out is None:
+        scene = a.scenario if a.all else a.scenario.rsplit("-", 1)[0]
+        found = [rounds.build_dir(r, "expected") for r in rounds.names()
+                 if os.path.isdir(rounds.build_dir(r, "expected", scene))]
+        if not found:
+            raise SystemExit(f"{scene} is not in any build; run python tools/build.py <round> first")
+        a.out = found[0]
     if a.all:
         for s in load(a.out, a.scenario)[0]:
             show(a.out, s["scenario_id"])

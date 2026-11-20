@@ -1,5 +1,48 @@
 # Changelog
 
+## 2026-11-16: situations in their own files, and rounds (khai)
+
+No scenario changes: all 57 scene files and every per-scene output are byte for byte the same as before, and each
+round's `scenarios.json` is exactly its situations' slice of the previous single file.
+
+- **Rounds.** "Round 1" had grown from the 6 reviewed situations to every situation written since. It is now the
+  6 situations reviewed together (228 scenarios); the other 13 are **Round 2** (494 scenarios, not yet reviewed).
+  `rounds/<round>.yaml` lists each round's situations, and each round builds to `build/<round>/`.
+- **One file per situation** in `situations/`, instead of one 980-line `make_scenes.py` that everyone edited
+  (its comments had numbered situations 13, 13, 14, 14, 15, 13, 14). Shared sentences are in `situations/_shared.py`.
+- **Merged Auden's `auden-new-situations` branch** (`lane_edge`, `two_means`; now in Round 2). `make_catalog.py`
+  crashed on its new variables; descriptions added.
+- **Layout.** The `ael_round1_kit/` folder is gone: tools are in `tools/`, review sheets in `reviews/round1/`.
+- **One command**: `python tools/build.py <round>` builds and runs every check, including
+  `check_independent.py`, which no README mentioned. Its expected counts were hard-coded for 6 situations; they now
+  scale with the number of situations.
+- `reviews.py` and `make_catalog.py` take the round (`python tools/reviews.py round2 new ...`).
+- The case-code seed prefix is now a named constant (`CODE_SEED` in `reference_pipeline.py`), still `"ael-round1-"`
+  so that no case code changes.
+- CI builds each round on Linux and Windows.
+- **Duplicate case codes fixed.** Codes are now unique across a whole build, not only within a scene: a code an
+  earlier scene (in file-name order) already used is redrawn, and every other code stays as it was. Round 1 is
+  unchanged. In Round 2, five scenarios get new codes (only their `key.csv` row and packet file name change):
+  `lane_edge_mid` FQU, `market_street_high` X8K, `signal_crossing_high` CRN, `train_crossing_high` UJF,
+  `work_zone_barrier_low` 8TA. Both rounds now pass every check.
+
+## 2026-11-16: cleanup, no change to scenarios (khai)
+
+The build output (`scenes/` and `expected/`) is byte for byte the same as before.
+
+- **Counts corrected.** README and `make_scenes.py` said 12 or 15 situations; the code defines **17 situations /
+  51 scenes / 646 scenarios** (adds `mirror_swerve`, `steward_or_pair`, `signal_crossing`, `toll_booth_tie`,
+  `car_wash_tie` to the 12 below). `make_scenes.py` now prints the situation count, so the README can be checked against it.
+- `verify_round.py` crashed on Windows (`IndexError`): `glob` returns backslash paths there. Fixed.
+- The six `car_wash_tie` / `toll_booth_tie` scene files were committed despite `.gitignore`; they are generated
+  (identically) by `make_scenes.py`, so they are no longer tracked.
+- `reviews/zarni.csv.bak` removed (an older draft, still in git history). The Claude-assisted readable scenarios
+  and review sheet moved to `reviews/claude_assisted/`.
+- Top-level README added; GitHub Actions now builds, lints, checks the review sheets and runs `verify_round.py`
+  on Linux and Windows for every push, and fails if generated files are committed.
+- **Still failing:** `verify_round.py` now finds 7 duplicate case codes (was 2): `GKG`, `FQU`, `CRN`, `X8K`, `UJF`,
+  `8TA`, `ANN`. Not fixed here, because fixing it changes some case codes.
+
 ## 2026-11-15: merge of all Round 1 contributions (12 situations)
 
 Merges `main` (Victoria: `work_zone_barrier`, `market_street`), `auden-new-situations` (Auden: `icy_crossing`,

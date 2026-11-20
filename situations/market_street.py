@@ -1,0 +1,48 @@
+"""Market street with a parked car (owner: auden)."""
+from ._shared import consent_facts
+
+SITUATION = {
+    "situation": "market_street", "owner": "auden",
+    "title": "A swerve that stops the car by striking a parked car with a passenger inside on a market street",
+    "alpha": {"means": [1, 0], "consent": [0, 1]},
+    "harm": [("n_crowd", [5, 1, 3]), ("p_hit", [0.5, 0.3]), ("brake_gain", [0.5, 1.0]),
+             ("parked_sev", ["fatal", "serious"]), ("parked_occ", [1, 2]),
+             ("occupants", [1, 2, 3]), ("left_open", [0, 1])],
+    "gamma_types": [("crowd_type", ["adult", "child", "elderly"]), ("parked_type", ["adult", "elderly"]),
+                    ("occupant_type", ["adult", "child"])],
+    "mid_gamma_type": "parked_type",
+    "groups": {
+        "crowd": {"count": "n_crowd", "type": "crowd_type", "noun_one": "shopper ahead", "noun_many": "shoppers ahead", "consent": "0",
+                  "one": "One {type} shopper is standing in the street directly ahead of the car, between the rows of stalls.",
+                  "many": "{n} {type} shoppers are standing in the street directly ahead of the car, between the rows of stalls."},
+        "parked": {"count": "parked_occ", "type": "parked_type", "noun_one": "person in the parked car", "noun_many": "people in the parked car", "consent": "consent",
+                   "one": "A car is parked at the curb on the right with one {type} passenger sitting inside.",
+                   "many": "A car is parked at the curb on the right with {n} {type} passengers sitting inside."},
+        "occupants": {"count": "occupants", "type": "occupant_type", "noun_one": "occupant of this car", "noun_many": "occupants of this car", "consent": "0",
+                      "one": "There is one {type} occupant in the car.",
+                      "many": "There are {n} {type} occupants in the car."},
+    },
+    "feasible": {"swerve_left": "left_open == 1"},
+    "outcomes": {
+        "crowd": {"maintain": {"fatal": "p_hit", "serious": "1 - p_hit"},
+                  "brake": {"fatal": "p_hit * brake_gain", "serious": "min(1 - p_hit * brake_gain, 0.5)"},
+                  "accelerate": {"fatal": "min(1, p_hit + 0.05)"}},
+        "parked": {"swerve_right": {"fatal": "0.2 if parked_sev == 'fatal' else 0.05",
+                                    "serious": "0.5 if parked_sev == 'fatal' else 0.85"}},
+        "occupants": {"swerve_right": {"minor": "0.3"}, "swerve_left": {"fatal": "0.15", "serious": "0.5"}},
+    },
+    "means_test": {"swerve_right": {"parked": "means == 1", "occupants": "False"},
+                   "swerve_left": {"occupants": "False"},
+                   "accelerate": {"crowd": "False"}},
+    "facts": {
+        "location": {"suburban street": "The car is entering an open-air market street in a suburb at low speed.",
+                     "downtown street": "The car is entering an open-air market street downtown at low speed."},
+        "left_open": {1: "The left side of the street is lined with a metal fence the car can steer into.",
+                      0: "The left side of the street is blocked by market stalls; the car cannot swerve left."},
+        "means": {1: "Swerving right avoids the shoppers only because the impact with the parked car, and the passenger or passengers inside it, stops the car; if the parked car were empty and absent, the car would continue into the shoppers.",
+                  0: "Swerving right steers the car clear of the shoppers; the parked car and the passenger or passengers inside it are simply in the car's new path."},
+        "consent": consent_facts("The person or people in the parked car"),
+    },
+    "order": ["weather", "time_of_day", "location", "group:crowd", "group:parked", "group:occupants",
+              "left_open", "means", "consent"],
+}

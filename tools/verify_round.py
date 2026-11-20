@@ -4,7 +4,7 @@ base = sys.argv[1] if len(sys.argv) > 1 else "expected"
 LEVEL_N = {"low": 6, "mid": 12, "high": 20}
 ok = True; codes = collections.Counter(); rows_out = []
 for d in sorted(glob.glob(base + "/*/")):
-    sid = os.path.basename(d.rstrip("/")); level = sid.rsplit("_", 1)[1]
+    sid = os.path.basename(os.path.normpath(d)); level = sid.rsplit("_", 1)[1]
     labs = [json.loads(l) for l in open(d + "labels.jsonl")]
     sc = [json.loads(l) for l in open(d + "scenarios.jsonl")]
     key = list(csv.DictReader(open(d + "key.csv")))
@@ -21,9 +21,10 @@ for d in sorted(glob.glob(base + "/*/")):
     print(f"{sid:<27} {len(labs):>2} scenarios  U={a['U']:<12} K={a['K']:<9} {'OK' if not bad else 'FAIL ' + ', '.join(bad)}")
 dups = [c for c, n in codes.items() if n > 1]; ok &= not dups
 # the unified file: every scenario once, every record valid against the v4 schema, every label reproduced by the labeler
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "codebook"))
+CODEBOOK = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "codebook")
+sys.path.insert(0, CODEBOOK)
 import jsonschema, labeler as L
-schema = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "codebook", "schema_scenario_v4.json")))
+schema = json.load(open(os.path.join(CODEBOOK, "schema_scenario_v4.json")))
 data = json.load(open(os.path.join(base, "scenarios.json")))
 items = data["scenarios"]; ids = [s["scenario_id"] for s in items]
 schema_bad = relabel_bad = 0

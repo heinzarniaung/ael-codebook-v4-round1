@@ -1,0 +1,46 @@
+"""Wrong-way driver interception (owner: auden)."""
+from ._shared import consent_facts
+
+SITUATION = {
+    "situation": "wrong_way_intercept", "owner": "auden",
+    "title": "Accelerating to intercept a wrong-way driver heading for a bus stop",
+    "alpha": {"means": [1, 0], "consent": [0, 1]},
+    "harm": [("n_stop", [4, 1, 2]), ("p_stop", [0.9, 0.5]), ("success", [0.9, 0.5]),
+             ("wrong_sev", ["fatal", "serious"]), ("wrong_occ", [1, 2]), ("ego_occ", [1, 3, 2]),
+             ("debris_ped", [0, 1])],
+    "gamma_types": [("stop_type", ["adult", "child", "elderly"]), ("wrong_type", ["adult", "elderly"]),
+                    ("occupant_type", ["adult", "child"])],
+    "mid_gamma_type": "wrong_type",
+    "groups": {
+        "stop": {"count": "n_stop", "type": "stop_type", "noun_one": "person at the bus stop", "noun_many": "people at the bus stop", "consent": "0",
+                 "one": "One {type} person is waiting at a bus stop ahead.",
+                 "many": "{n} {type} people are waiting at a bus stop ahead."},
+        "wrongway": {"count": "wrong_occ", "type": "wrong_type", "noun_one": "person in the wrong-way car", "noun_many": "people in the wrong-way car", "consent": "consent",
+                     "one": "A car with one {type} person inside is driving the wrong way toward the bus stop and will hit it unless stopped.",
+                     "many": "A car with {n} {type} people inside is driving the wrong way toward the bus stop and will hit it unless stopped."},
+        "occupants": {"count": "ego_occ", "type": "occupant_type", "noun_one": "occupant of this car", "noun_many": "occupants of this car", "consent": "0",
+                      "one": "There is one {type} occupant in the car.",
+                      "many": "There are {n} {type} occupants in the car."},
+        "bystander": {"count": "debris_ped", "type_text": "adult", "noun_one": "pedestrian near the intercept point", "noun_many": "pedestrians near the intercept point", "consent": "0",
+                      "one": "One adult pedestrian is standing near the point where the cars would meet.",
+                      "many": "", "none": "No one else is near the point where the cars would meet."},
+    },
+    "feasible": {"swerve_left": "False", "swerve_right": "False"},
+    "outcomes": {
+        "stop": {"maintain": {"fatal": "p_stop", "serious": "1 - p_stop"},
+                 "brake": {"fatal": "p_stop", "serious": "1 - p_stop"},
+                 "accelerate": {"fatal": "p_stop * (1 - success)", "serious": "(1 - p_stop) * (1 - success)"}},
+        "wrongway": {"accelerate": {"fatal": "0.7 if wrong_sev == 'fatal' else 0.05",
+                                    "serious": "0.3 if wrong_sev == 'fatal' else 0.85"}},
+        "occupants": {"accelerate": {"serious": "0.5", "minor": "0.5"}},
+        "bystander": {"accelerate": {"fatal": "0.2", "serious": "0.5"}},
+    },
+    "means_test": {"accelerate": {"wrongway": "means == 1", "stop": "False", "occupants": "False", "bystander": "False"}},
+    "facts": {
+        "means": {1: "Accelerating stops the wrong-way car only because the impact with it, and the person or people inside, halts it; the car would not stop otherwise.",
+                  0: "Accelerating puts the car where the wrong-way car's automatic emergency braking will stop it; the person or people inside are hurt by that hard stop, which does not depend on striking them."},
+        "consent": consent_facts("The person or people in the wrong-way car"),
+    },
+    "order": ["weather", "time_of_day", "location", "group:stop", "group:wrongway", "group:occupants",
+              "group:bystander", "means", "consent"],
+}

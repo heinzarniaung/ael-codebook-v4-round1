@@ -1,7 +1,9 @@
-"""Review sheets.
+"""Review sheets, one folder per round: reviews/<round>/<reviewer>.csv.
 
-  python reviews.py new <reviewer> <situation> <situation>   creates reviews/<reviewer>.csv, one row per scenario
-  python reviews.py summary                                  checks every sheet and lists every failed item
+  python tools/reviews.py <round> new <reviewer> <situation> ...   creates reviews/<round>/<reviewer>.csv
+  python tools/reviews.py <round> summary                          checks the round's sheets, lists every failed item
+
+Build the round first (python tools/build.py <round>): new sheets are made from its expected labels.
 
 A sheet has one row per scenario. R1-R8 are the checklist items in Auden's guide; each cell is Y, N or NA
 (NA only where the guide allows it). Any N needs a note.
@@ -11,18 +13,25 @@ import glob
 import os
 import sys
 
+import rounds
+
 ITEMS = [f"R{i}" for i in range(1, 9)]
 COLS = ["scene_id", "scenario_id", "case", "changed_variable"] + ITEMS + ["note"]
 NA_OK = {"R4"}  # R4 (only the changed variable changed) is NA for anchors
 
 
-def new(reviewer, situations):
-    rows = [r for r in csv.DictReader(open("expected/ALL_expected_labels.csv"))
+def new(round_name, reviewer, situations):
+    listed = rounds.load_round(round_name)["situations"]
+    missing = [s for s in situations if s not in listed]
+    if missing:
+        sys.exit(f"not in {round_name}: {', '.join(missing)}")
+    rows = [r for r in csv.DictReader(open(rounds.build_dir(round_name, "expected", "ALL_expected_labels.csv")))
             if r["scene_id"].rsplit("_", 1)[0] in situations]
     order = {"high": 0, "mid": 1, "low": 2}
     rows.sort(key=lambda r: (r["scene_id"].rsplit("_", 1)[0], order[r["scene_id"].rsplit("_", 1)[1]], r["scenario_id"]))
-    os.makedirs("reviews", exist_ok=True)
-    path = f"reviews/{reviewer}.csv"
+    folder = os.path.join(rounds.ROOT, "reviews", round_name)
+    os.makedirs(folder, exist_ok=True)
+    path = os.path.join(folder, f"{reviewer}.csv")
     if os.path.exists(path):
         sys.exit(f"{path} already exists; not overwriting it")
     with open(path, "w", newline="") as f:
@@ -33,9 +42,10 @@ def new(reviewer, situations):
     print(f"wrote {path} with {len(rows)} rows")
 
 
-def summary():
+def summary(round_name):
+    rounds.load_round(round_name)
     problems, fails, total = [], [], 0
-    for path in sorted(glob.glob("reviews/*.csv")):
+    for path in sorted(glob.glob(os.path.join(rounds.ROOT, "reviews", round_name, "*.csv"))):
         if path.endswith("_recount.csv"):
             continue
         for n, r in enumerate(csv.DictReader(open(path)), start=2):
@@ -59,9 +69,9 @@ def summary():
 
 
 if __name__ == "__main__":
-    if len(sys.argv) >= 4 and sys.argv[1] == "new":
-        new(sys.argv[2], sys.argv[3:])
-    elif sys.argv[1:] == ["summary"]:
-        summary()
+    if len(sys.argv) >= 5 and sys.argv[2] == "new":
+        new(sys.argv[1], sys.argv[3], sys.argv[4:])
+    elif len(sys.argv) == 3 and sys.argv[2] == "summary":
+        summary(sys.argv[1])
     else:
         sys.exit(__doc__)
